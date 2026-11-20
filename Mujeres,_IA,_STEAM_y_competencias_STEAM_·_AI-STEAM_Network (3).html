@@ -8,6 +8,7 @@
   <title>Mujeres, IA, STEAM y competencias STEAM · AI-STEAM Network</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
   <style>
     :root {
       color-scheme: light;
@@ -457,6 +458,32 @@
       border-top: var(--rule-ink);
       padding-top: var(--space-md);
       display: inline-block;
+    }
+
+    .cover-brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .cover-logo-hero {
+      display: block;
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .cover-logo-conselleria {
+      display: block;
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    #scene-1 .scene-inner {
+      gap: var(--space-md);
     }
 
     .cover-speaker {
@@ -1259,6 +1286,50 @@
       min-height: 1.2em;
     }
 
+    .aisecrett-logo-plate {
+      background-color: var(--surface-elevated);
+      border: var(--rule-stone);
+      border-radius: var(--rounded);
+      padding: 0.35rem 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .aisecrett-logo-plate img {
+      display: block;
+      height: 34px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .contact-qr-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    .contact-qr-box {
+      width: 84px;
+      height: 84px;
+      flex-shrink: 0;
+      padding: 4px;
+      background-color: var(--surface-elevated);
+      border: var(--rule-stone);
+      border-radius: var(--rounded);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-qr-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
     /* Bottom presenter hint bar */
     .deck-footer {
       padding: var(--space-sm) var(--space-xl);
@@ -1403,6 +1474,10 @@
         <!-- ESCENA 1: PORTADA -->
         <section class="scene is-active" id="scene-1" aria-hidden="false">
           <div class="scene-inner">
+            <div class="cover-brand-bar">
+              <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT" class="cover-logo-hero">
+              <img src="logo-conselleria.png" alt="Conselleria d'Educació, Cultura i Universitats · Generalitat Valenciana" class="cover-logo-conselleria">
+            </div>
             <div class="cover-layout">
               <div style="display: grid; gap: var(--space-xl);">
                 <div class="cover-meta-top">
@@ -1826,8 +1901,15 @@
         <section class="scene" id="scene-6" aria-hidden="true">
           <div class="scene-inner">
             <div>
-              <div class="eyebrow">06 · Arquitectura AI-SECRETT &amp; AI-STEAM Network</div>
-              <h2 class="scene-title">Del pasado al presente: la <em>red europea</em> de talento</h2>
+              <div class="scene-header-row">
+                <div>
+                  <div class="eyebrow">06 · Arquitectura AI-SECRETT &amp; AI-STEAM Network</div>
+                  <h2 class="scene-title">Del pasado al presente: la <em>red europea</em> de talento</h2>
+                </div>
+                <div class="aisecrett-logo-plate">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
+                </div>
+              </div>
               <p class="scene-lede" style="margin-top: var(--space-xs);">La visión de Ada Byron cristaliza hoy en una red distribuida que conecta Formación Profesional, Universidad y creadores con la sociedad europea.</p>
             </div>
 
@@ -1886,8 +1968,8 @@
                 <div class="kpi-label">Despliegue paneuropeo conectado</div>
               </div>
               <div class="kpi-cell">
-                <div class="kpi-value">0 €</div>
-                <div class="kpi-label">Regla de Gasto Cero para participar</div>
+                <div class="kpi-value">8 universidades</div>
+                <div class="kpi-label">Universidades europeas en el consorcio</div>
               </div>
             </div>
           </div>
@@ -1897,8 +1979,15 @@
         <section class="scene" id="scene-7" aria-hidden="true">
           <div class="scene-inner">
             <div>
-              <div class="eyebrow">07 · Áreas sectoriales de aplicación</div>
-              <h2 class="scene-title">Los <em>7 sectores</em> productivos de AI-SECRETT</h2>
+              <div class="scene-header-row">
+                <div>
+                  <div class="eyebrow">07 · Áreas sectoriales de aplicación</div>
+                  <h2 class="scene-title">Los <em>7 sectores</em> productivos de AI-SECRETT</h2>
+                </div>
+                <div class="aisecrett-logo-plate">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
+                </div>
+              </div>
               <p class="scene-lede" style="margin-top: var(--space-xs);">Pulsa sobre cada sector para desplegar cómo convergen la IA y las competencias STEAM.</p>
             </div>
 
@@ -1977,10 +2066,15 @@
                 <div class="eyebrow">08 · Modelo operativo Learning by Developing</div>
                 <h2 class="scene-title">La Comunidad de Práctica <em>(CoP)</em> AI-STEAM Network</h2>
               </div>
-              <span class="zero-cost-pill">
-                <i data-lucide="shield-check" width="15" height="15"></i>
-                <span>Regla de Gasto Cero · 0 €</span>
-              </span>
+              <div style="display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; justify-content: flex-end;">
+                <span class="zero-cost-pill">
+                  <i data-lucide="layers" width="15" height="15"></i>
+                  <span>5 opciones para colaborar en la CoP</span>
+                </span>
+                <div class="aisecrett-logo-plate">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
+                </div>
+              </div>
             </div>
 
             <div class="cop-architecture">
@@ -1995,7 +2089,7 @@
                 </div>
                 <div class="cop-collapse">
                   <div class="cop-collapse-inner">
-                    <p class="cop-collapse-text" style="color: var(--on-primary-container);">Acompañamiento experto continuo en ética, metodología STEAM, diseño humano-IA y viabilidad pedagógica desde el planteamiento del reto hasta la publicación del caso de éxito, sin coste económico (0 €).</p>
+                    <p class="cop-collapse-text" style="color: var(--on-primary-container);">Acompañamiento experto continuo en ética, metodología STEAM, diseño humano-IA y viabilidad pedagógica desde el planteamiento del reto hasta la publicación del caso de éxito, respaldado por las 8 universidades europeas del consorcio.</p>
                   </div>
                 </div>
               </button>
@@ -2050,7 +2144,12 @@
                 <div class="eyebrow">09 · Caso de éxito documentado · CAS-2026-001</div>
                 <h2 class="scene-title">Proyecto <em>LARA</em>: IA inclusiva desde la FP</h2>
               </div>
-              <span class="eyebrow">IES Severo Ochoa (Elche)</span>
+              <div style="display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; justify-content: flex-end;">
+                <span class="eyebrow">IES Severo Ochoa (Elche)</span>
+                <div class="aisecrett-logo-plate">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
+                </div>
+              </div>
             </div>
 
             <div class="lara-layout">
@@ -2059,6 +2158,12 @@
                 <h3 class="panel-title" style="margin: 0;">Voz accesible para trastornos del habla</h3>
                 <p class="panel-desc" style="font-size: 1rem;">Desarrollado por el Curso de Especialización en IA y Big Data del IES Severo Ochoa (Elche), LARA aplica modelos de IA entrenados sobre fonemas propios para reconocer y traducir casi en tiempo real el habla de personas con parálisis cerebral, disartria o disfasia.</p>
                 <p class="panel-desc" style="font-size: 1rem;">Encarna la esencia STEAM: ingeniería de datos y aprendizaje automático al servicio directo de la dignidad humana, co-construida con asociaciones locales y replicada por centros líderes de FP.</p>
+                <div class="contact-actions" style="margin-top: var(--space-xs);">
+                  <a class="btn btn-accent" href="https://youtu.be/oeKX7MPGhwc?si=hPY4iqYgM3VpVtjR&amp;t=6" target="_blank" rel="noopener noreferrer" onclick="return openFullWindow(event, this.href)">
+                    <i data-lucide="play-circle" width="16" height="16"></i>
+                    <span>Ver vídeo real del Proyecto LARA</span>
+                  </a>
+                </div>
               </article>
 
               <div class="lara-metrics-grid">
@@ -2087,27 +2192,43 @@
         <section class="scene" id="scene-10" aria-hidden="true">
           <div class="scene-inner">
             <div>
-              <div class="eyebrow">10 · Cierre e invitación abierta</div>
-              <h2 class="scene-title">Cómo formar parte de <em>AI-STEAM Network</em></h2>
-              <p class="scene-lede" style="margin-top: var(--space-xs);">La tecnología solo cobra sentido cuando teje comunidad. Súmate con un reto, un piloto o una mentoría bajo la regla de gasto cero (0 €).</p>
+              <div class="scene-header-row">
+                <div>
+                  <div class="eyebrow">10 · Cierre e invitación abierta</div>
+                  <h2 class="scene-title">Cómo formar parte de <em>AI-STEAM Network</em></h2>
+                </div>
+                <div class="aisecrett-logo-plate">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
+                </div>
+              </div>
+              <p class="scene-lede" style="margin-top: var(--space-xs);">La tecnología solo cobra sentido cuando teje comunidad. Súmate con un reto, un piloto o una mentoría conectada con las 8 universidades europeas del consorcio.</p>
             </div>
 
             <div class="closing-cards-grid">
-              <!-- Tarjeta 1: Web provisional -->
+              <!-- Tarjeta 1: Portal AI-STEAM Network -->
               <article class="contact-card">
                 <div style="display: grid; gap: var(--space-sm);">
-                  <div style="display: flex; align-items: center; gap: var(--space-sm); color: var(--primary);">
-                    <i data-lucide="globe" width="20" height="20"></i>
-                    <span class="eyebrow">Portal de trabajo</span>
+                  <div class="contact-qr-row">
+                    <div style="display: grid; gap: var(--space-xs);">
+                      <div style="display: flex; align-items: center; gap: var(--space-sm); color: var(--primary);">
+                        <i data-lucide="globe" width="20" height="20"></i>
+                        <span class="eyebrow">Portal de trabajo</span>
+                      </div>
+                      <h3 class="contact-card-title">Web provisional AI-STEAM Network</h3>
+                    </div>
+                    <div class="contact-qr-box" data-qr="https://jsmiragregori.github.io/AI-STEAM-NETWORK/" aria-label="Código QR de https://jsmiragregori.github.io/AI-STEAM-NETWORK/"></div>
                   </div>
-                  <h3 class="contact-card-title">Web provisional AI-STEAM Network</h3>
                   <p class="contact-card-desc">Repositorio abierto de casos, sectores productivos y dinámicas de la Comunidad de Práctica.</p>
                   <div class="contact-address" id="addr-portal">https://jsmiragregori.github.io/AI-STEAM-NETWORK/</div>
                 </div>
                 <div class="contact-actions">
-                  <button type="button" class="btn btn-accent" onclick="copyText('https://jsmiragregori.github.io/AI-STEAM-NETWORK/', 'fb-portal')">
-                    <i data-lucide="copy" width="15" height="15"></i>
-                    <span>Copiar dirección web</span>
+                  <a class="btn btn-accent" href="https://jsmiragregori.github.io/AI-STEAM-NETWORK/" target="_blank" rel="noopener noreferrer">
+                    <i data-lucide="external-link" width="15" height="15"></i>
+                    <span>Abrir web</span>
+                  </a>
+                  <button type="button" class="btn btn-subtle" onclick="copyText('https://jsmiragregori.github.io/AI-STEAM-NETWORK/', 'fb-portal')">
+                    <i data-lucide="copy" width="14" height="14"></i>
+                    <span>Copiar</span>
                   </button>
                   <span class="copy-feedback" id="fb-portal" aria-live="polite"></span>
                 </div>
@@ -2116,18 +2237,27 @@
               <!-- Tarjeta 2: Web oficial AI-SECRETT -->
               <article class="contact-card">
                 <div style="display: grid; gap: var(--space-sm);">
-                  <div style="display: flex; align-items: center; gap: var(--space-sm); color: var(--primary);">
-                    <i data-lucide="compass" width="20" height="20"></i>
-                    <span class="eyebrow">Consorcio europeo</span>
+                  <div class="contact-qr-row">
+                    <div style="display: grid; gap: var(--space-xs);">
+                      <div style="display: flex; align-items: center; gap: var(--space-sm); color: var(--primary);">
+                        <i data-lucide="compass" width="20" height="20"></i>
+                        <span class="eyebrow">Consorcio europeo</span>
+                      </div>
+                      <h3 class="contact-card-title">Web oficial de AI-SECRETT</h3>
+                    </div>
+                    <div class="contact-qr-box" data-qr="https://aisecrett.eu" aria-label="Código QR de aisecrett.eu"></div>
                   </div>
-                  <h3 class="contact-card-title">Web oficial de AI-SECRETT</h3>
                   <p class="contact-card-desc">Marco del proyecto europeo, formación académica (Track A) y consorcio de 23 socios en 12 países.</p>
                   <div class="contact-address" id="addr-official">https://aisecrett.eu</div>
                 </div>
                 <div class="contact-actions">
-                  <button type="button" class="btn btn-accent" onclick="copyText('https://aisecrett.eu', 'fb-official')">
-                    <i data-lucide="copy" width="15" height="15"></i>
-                    <span>Copiar dirección web</span>
+                  <a class="btn btn-accent" href="https://aisecrett.eu" target="_blank" rel="noopener noreferrer">
+                    <i data-lucide="external-link" width="15" height="15"></i>
+                    <span>Abrir web</span>
+                  </a>
+                  <button type="button" class="btn btn-subtle" onclick="copyText('https://aisecrett.eu', 'fb-official')">
+                    <i data-lucide="copy" width="14" height="14"></i>
+                    <span>Copiar</span>
                   </button>
                   <span class="copy-feedback" id="fb-official" aria-live="polite"></span>
                 </div>
@@ -2136,11 +2266,16 @@
               <!-- Tarjeta 3: Correo único de contacto -->
               <article class="contact-card">
                 <div style="display: grid; gap: var(--space-sm);">
-                  <div style="display: flex; align-items: center; gap: var(--space-sm); color: var(--primary);">
-                    <i data-lucide="mail" width="20" height="20"></i>
-                    <span class="eyebrow">Contacto directo</span>
+                  <div class="contact-qr-row">
+                    <div style="display: grid; gap: var(--space-xs);">
+                      <div style="display: flex; align-items: center; gap: var(--space-sm); color: var(--primary);">
+                        <i data-lucide="mail" width="20" height="20"></i>
+                        <span class="eyebrow">Contacto directo</span>
+                      </div>
+                      <h3 class="contact-card-title">Correo único de la red</h3>
+                    </div>
+                    <div class="contact-qr-box" data-qr="mailto:aisteam_secrett@gva.es" aria-label="Código QR de contacto aisteam_secrett@gva.es"></div>
                   </div>
-                  <h3 class="contact-card-title">Correo único de la red</h3>
                   <p class="contact-card-desc">Canal directo para adhesiones, mentorías, propuestas de retos y coordinación institucional.</p>
                   <div class="contact-address">aisteam_secrett@gva.es</div>
                 </div>
@@ -2195,9 +2330,10 @@
     // Scene 4 state
     let isSteamActive = false;
 
-    // Canvas state for Scene 5
-    const canvasNodes = [];
-    let lastNodeTime = 0;
+    // Canvas state for Scene 5 (freehand fine artist brush)
+    const canvasStrokes = [];
+    let currentStroke = null;
+    let isDrawing = false;
     let canvasCtx = null;
     let canvasEl = null;
 
@@ -2361,31 +2497,42 @@
       return val || fallback;
     }
 
-    function addCanvasPoint(x, y, forcePolygon) {
-      const now = Date.now();
-      if (!forcePolygon && now - lastNodeTime < 45) return;
-      if (canvasNodes.length > 0) {
-        const prev = canvasNodes[canvasNodes.length - 1];
-        const dist = Math.hypot(x - prev.x, y - prev.y);
-        if (!forcePolygon && dist < 24) return;
-      }
-      lastNodeTime = now;
-
+    function getBrushColor(index) {
       const palette = [
         getCssToken('--primary', '#5620F6'),
-        getCssToken('--secondary', '#4918AD'),
-        getCssToken('--on-surface', '#1E1B4B')
+        getCssToken('--on-surface', '#1E1B4B'),
+        getCssToken('--secondary', '#4918AD')
       ];
-      const color = palette[canvasNodes.length % palette.length];
-      const radius = forcePolygon ? 26 + (canvasNodes.length % 3) * 10 : 12 + (canvasNodes.length % 4) * 5;
-      const sides = 3 + (canvasNodes.length % 4); // triangle, square, pentagon, hexagon
-      const angle = (canvasNodes.length * 0.65) % (Math.PI * 2);
+      return palette[index % palette.length];
+    }
 
-      canvasNodes.push({ x, y, color, radius, sides, angle, isBurst: !!forcePolygon });
-      if (canvasNodes.length > 90) {
-        canvasNodes.shift();
-      }
+    function startBrushStroke(x, y) {
+      isDrawing = true;
+      currentStroke = {
+        color: getBrushColor(canvasStrokes.length),
+        points: [{ x, y, width: 2.2 }]
+      };
+      canvasStrokes.push(currentStroke);
       redrawHumanCanvas();
+    }
+
+    function extendBrushStroke(x, y) {
+      if (!isDrawing || !currentStroke) return;
+      const pts = currentStroke.points;
+      const prev = pts[pts.length - 1];
+      const dist = Math.hypot(x - prev.x, y - prev.y);
+      if (dist < 1.5) return;
+
+      // Subtle velocity-sensitive fine brush width (1.2px .. 3.4px)
+      const targetWidth = Math.max(1.2, Math.min(3.4, 3.3 - dist * 0.08));
+      const width = prev.width * 0.65 + targetWidth * 0.35;
+      pts.push({ x, y, width });
+      redrawHumanCanvas();
+    }
+
+    function endBrushStroke() {
+      isDrawing = false;
+      currentStroke = null;
     }
 
     function redrawHumanCanvas() {
@@ -2413,74 +2560,50 @@
         canvasCtx.stroke();
       }
 
-      if (canvasNodes.length === 0) return;
+      if (canvasStrokes.length === 0) return;
 
-      // Connect nearby nodes with crisp lines & subtle arcs
-      for (let i = 0; i < canvasNodes.length; i++) {
-        const a = canvasNodes[i];
-        for (let j = i + 1; j < canvasNodes.length; j++) {
-          const b = canvasNodes[j];
-          const d = Math.hypot(b.x - a.x, b.y - a.y);
-          if (d < 175) {
-            canvasCtx.save();
-            canvasCtx.globalAlpha = Math.max(0.1, 0.55 - d / 320);
-            canvasCtx.strokeStyle = a.color;
-            canvasCtx.lineWidth = 1.1;
-            canvasCtx.beginPath();
-            canvasCtx.moveTo(a.x, a.y);
-            canvasCtx.lineTo(b.x, b.y);
-            canvasCtx.stroke();
+      canvasCtx.save();
+      canvasCtx.lineCap = 'round';
+      canvasCtx.lineJoin = 'round';
 
-            // Delicate harmonic arc every few pairs
-            if ((i + j) % 3 === 0 && d > 45) {
-              const mx = (a.x + b.x) / 2;
-              const my = (a.y + b.y) / 2;
-              canvasCtx.beginPath();
-              canvasCtx.arc(mx, my, d * 0.32, 0, Math.PI, (i % 2 === 0));
-              canvasCtx.stroke();
-            }
-            canvasCtx.restore();
-          }
-        }
-      }
+      for (const stroke of canvasStrokes) {
+        const pts = stroke.points;
+        if (pts.length === 0) continue;
 
-      // Draw regular geometric polygons and nodes
-      for (let i = 0; i < canvasNodes.length; i++) {
-        const n = canvasNodes[i];
-        canvasCtx.save();
-        canvasCtx.strokeStyle = n.color;
-        canvasCtx.lineWidth = n.isBurst ? 1.6 : 1.15;
-        canvasCtx.globalAlpha = 0.85;
+        canvasCtx.strokeStyle = stroke.color;
+        canvasCtx.fillStyle = stroke.color;
 
-        // Polygon
-        canvasCtx.beginPath();
-        for (let k = 0; k <= n.sides; k++) {
-          const theta = n.angle + (k * Math.PI * 2) / n.sides;
-          const px = n.x + Math.cos(theta) * n.radius;
-          const py = n.y + Math.sin(theta) * n.radius;
-          if (k === 0) canvasCtx.moveTo(px, py);
-          else canvasCtx.lineTo(px, py);
-        }
-        canvasCtx.stroke();
-
-        // Concentric arc if burst
-        if (n.isBurst) {
+        if (pts.length === 1) {
           canvasCtx.beginPath();
-          canvasCtx.arc(n.x, n.y, n.radius * 1.45, n.angle, n.angle + Math.PI * 1.35);
+          canvasCtx.arc(pts[0].x, pts[0].y, pts[0].width * 0.55, 0, Math.PI * 2);
+          canvasCtx.fill();
+          continue;
+        }
+
+        // Smooth freehand quadratic curve with fine variable brush weight
+        for (let i = 1; i < pts.length; i++) {
+          const p0 = pts[i - 1];
+          const p1 = pts[i];
+          const prevMidX = i === 1 ? p0.x : (pts[i - 2].x + p0.x) / 2;
+          const prevMidY = i === 1 ? p0.y : (pts[i - 2].y + p0.y) / 2;
+          const midX = i === pts.length - 1 ? p1.x : (p0.x + p1.x) / 2;
+          const midY = i === pts.length - 1 ? p1.y : (p0.y + p1.y) / 2;
+
+          canvasCtx.beginPath();
+          canvasCtx.lineWidth = p1.width;
+          canvasCtx.moveTo(prevMidX, prevMidY);
+          canvasCtx.quadraticCurveTo(p0.x, p0.y, midX, midY);
           canvasCtx.stroke();
         }
-
-        // Center anchor dot
-        canvasCtx.fillStyle = n.color;
-        canvasCtx.beginPath();
-        canvasCtx.arc(n.x, n.y, n.isBurst ? 3.5 : 2.5, 0, Math.PI * 2);
-        canvasCtx.fill();
-        canvasCtx.restore();
       }
+
+      canvasCtx.restore();
     }
 
     function clearHumanCanvas() {
-      canvasNodes.length = 0;
+      canvasStrokes.length = 0;
+      currentStroke = null;
+      isDrawing = false;
       redrawHumanCanvas();
     }
 
@@ -2490,15 +2613,23 @@
 
       resizeHumanCanvas();
 
-      canvas.addEventListener('pointermove', (e) => {
+      canvas.addEventListener('pointerdown', (e) => {
+        if (e.button !== 0 && e.pointerType === 'mouse') return;
         const rect = canvas.getBoundingClientRect();
-        addCanvasPoint(e.clientX - rect.left, e.clientY - rect.top, false);
+        if (canvas.setPointerCapture) {
+          try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
+        }
+        startBrushStroke(e.clientX - rect.left, e.clientY - rect.top);
       });
 
-      canvas.addEventListener('pointerdown', (e) => {
+      canvas.addEventListener('pointermove', (e) => {
+        if (!isDrawing) return;
         const rect = canvas.getBoundingClientRect();
-        addCanvasPoint(e.clientX - rect.left, e.clientY - rect.top, true);
+        extendBrushStroke(e.clientX - rect.left, e.clientY - rect.top);
       });
+
+      canvas.addEventListener('pointerup', endBrushStroke);
+      canvas.addEventListener('pointercancel', endBrushStroke);
 
       window.addEventListener('resize', () => {
         if (currentScene === 4) {
@@ -2519,6 +2650,17 @@
       if (!btn) return;
       const isOpen = btn.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    function openFullWindow(event, url) {
+      const w = window.screen ? window.screen.availWidth : window.innerWidth;
+      const h = window.screen ? window.screen.availHeight : window.innerHeight;
+      const win = window.open(url, '_blank', `noopener,noreferrer,width=${w},height=${h},left=0,top=0`);
+      if (win) {
+        if (event) event.preventDefault();
+        return false;
+      }
+      return true;
     }
 
     // Scene 10: Copy text helper
@@ -2548,11 +2690,26 @@
       }
     });
 
+    function renderQrCodes() {
+      if (typeof qrcode === 'undefined') return;
+      const ink = getCssToken('--on-surface', '#1E1B4B');
+      document.querySelectorAll('.contact-qr-box[data-qr]').forEach((box) => {
+        const text = box.getAttribute('data-qr');
+        if (!text) return;
+        const qr = qrcode(0, 'M');
+        qr.addData(text);
+        qr.make();
+        const svgStr = qr.createSvgTag({ cellSize: 3, margin: 1 });
+        box.innerHTML = svgStr.replace(/fill="#000000"|fill="black"/gi, `fill="${ink}"`);
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
       }
       initHumanCanvas();
+      renderQrCodes();
       updateSceneUI();
     });
   </script>

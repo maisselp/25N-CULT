@@ -8,7 +8,7 @@ Presentación web interactiva con desplazamiento horizontal diseñada para la po
 
 La ponencia traza un hilo histórico y conceptual desde la figura de **Ada Lovelace (Ada Byron)** y su noción de *«Ciencia Poética»* hasta los retos actuales de la **Inteligencia Artificial** y el enfoque **STEAM** (incorporando las Artes y las Humanidades al ámbito científico-tecnológico). Frente a una visión puramente mecánica del cálculo, la presentación defiende que *la IA es el pincel, pero la mirada, el criterio y el sentido cultural siguen siendo humanos*.
 
-A partir de esa base, el recorrido conecta el pasado con la iniciativa europea **AI-SECRETT** y la **Comunidad de Práctica (CoP) AI-STEAM Network**, mostrando cómo convergen la Formación Profesional, la Universidad, el talento femenino y los creadores en siete sectores productivos, con ejemplos reales como el **Proyecto LARA** (IA inclusiva desde la FP) y una invitación abierta a participar bajo la regla de gasto cero (`0 €`).
+A partir de esa base, el recorrido conecta el pasado con la iniciativa europea **AI-SECRETT** y la **Comunidad de Práctica (CoP) AI-STEAM Network**, mostrando cómo convergen la Formación Profesional, la Universidad (con la participación de **8 universidades europeas** del consorcio), el talento femenino y los creadores en siete sectores productivos, con ejemplos reales como el **Proyecto LARA** (IA inclusiva desde la FP) y una invitación abierta a participar.
 
 ---
 
@@ -20,12 +20,12 @@ La presentación se articula como un recorrido narrativo horizontal en 10 escena
 2. **Ada Byron y la «Ciencia Poética»**: Revelación progresiva en directo de Ada Lovelace y sus referentes familiares (Annabella Milbanke y Lord Byron).
 3. **La máquina de Babbage y la visión de Ada**: Comparativa paso a paso entre la Máquina Analítica de Charles Babbage y la visión computacional y simbólica de Ada.
 4. **De STEM a STEAM**: Transición interactiva para incorporar la **«A»** de Artes y Humanidades al enfoque científico-tecnológico.
-5. **La IA es el pincel. La mirada es humana.**: Lienzo interactivo (`<canvas>`) de co-creación geométrica donde el criterio humano guía el trazo.
-6. **Del pasado al presente: la red europea de talento**: Conexión entre Formación Profesional, Universidad, creadores y sociedad europea.
+5. **La IA es el pincel. La mirada es humana.**: Lienzo interactivo (`<canvas>`) de trazo libre a mano alzada que simula un pincel fino de artista guiado por el criterio humano.
+6. **Del pasado al presente: la red europea de talento**: Conexión entre Formación Profesional, Universidad (`8 universidades europeas`), creadores y sociedad europea, con la placa oficial de AI-SECRETT.
 7. **Los 7 sectores productivos de AI-SECRETT**: Tarjetas desplegables que muestran la convergencia entre IA y competencias STEAM en siete sectores clave.
-8. **La Comunidad de Práctica (CoP) AI-STEAM Network**: Estructura y funcionamiento de la comunidad mediante tarjetas interactivas.
-9. **Proyecto LARA: IA inclusiva desde la FP**: Caso real de aplicación de inteligencia artificial inclusiva desarrollada desde la Formación Profesional.
-10. **Cómo formar parte de AI-STEAM Network**: Cierre, participación bajo la regla de gasto cero (`0 €`) y utilidades de contacto con copia rápida al portapapeles.
+8. **La Comunidad de Práctica (CoP) AI-STEAM Network**: Estructura y funcionamiento de la comunidad mediante tarjetas interactivas, respaldada por las 8 universidades europeas.
+9. **Proyecto LARA: IA inclusiva desde la FP**: Caso real de aplicación de inteligencia artificial inclusiva desarrollada desde la Formación Profesional (IES Severo Ochoa), con acceso directo al vídeo del proyecto.
+10. **Cómo formar parte de AI-STEAM Network**: Cierre, invitación abierta conectada con las 8 universidades europeas, botones directos de «Abrir web», códigos QR y utilidades de contacto con copia rápida al portapapeles.
 
 ---
 
