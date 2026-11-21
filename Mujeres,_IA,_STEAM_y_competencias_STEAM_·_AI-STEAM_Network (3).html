@@ -135,7 +135,7 @@
     /* Top bar: static, minimal, museum-catalogue index */
     .deck-topbar {
       display: grid;
-      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-columns: auto minmax(0, 1fr);
       align-items: center;
       gap: var(--space-lg);
       padding: var(--space-md) var(--space-xl);
@@ -879,6 +879,35 @@
       font-size: 0.95rem;
     }
 
+    .meaning-point {
+      margin: 0;
+      color: var(--on-surface-variant);
+      font-size: 0.975rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .meaning-point + .meaning-point {
+      margin-top: var(--space-xs);
+    }
+
+    .meaning-point strong {
+      font-weight: 600;
+      color: var(--on-surface);
+    }
+
+    .meaning-box.is-arts .meaning-point strong {
+      color: var(--on-primary-container);
+    }
+
+    .meaning-point em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.15em;
+      color: var(--primary);
+    }
+
     /* Scene 5: Canvas Interactivo */
     .canvas-wrapper {
       position: relative;
@@ -1507,17 +1536,6 @@
         <button type="button" class="rail-node" data-goto="8" aria-label="Escena 9: Proyecto LARA" onclick="goToScene(8)"><span class="rail-node-dot"></span></button>
         <button type="button" class="rail-node" data-goto="9" aria-label="Escena 10: Cierre y contacto" onclick="goToScene(9)"><span class="rail-node-dot"></span></button>
       </nav>
-
-      <div class="topbar-controls">
-        <button type="button" id="btn-prev" class="nav-btn" onclick="prevScene()" aria-label="Escena anterior" disabled>
-          <i data-lucide="arrow-left" width="16" height="16"></i>
-          <span>Anterior</span>
-        </button>
-        <button type="button" id="btn-next" class="nav-btn nav-btn-primary" onclick="nextScene()" aria-label="Siguiente escena">
-          <span>Siguiente</span>
-          <i data-lucide="arrow-right" width="16" height="16"></i>
-        </button>
-      </div>
     </div>
 
     <!-- Horizontal 10-scene viewport -->
@@ -1565,10 +1583,6 @@
                     <div class="speaker-role">Ponente</div>
                     <div class="speaker-name">María José Lozano Pérez</div>
                   </div>
-                  <button type="button" class="btn btn-accent" onclick="nextScene()">
-                    <span>Comenzar ponencia</span>
-                    <i data-lucide="arrow-right" width="18" height="18"></i>
-                  </button>
                 </div>
               </div>
 
@@ -1624,12 +1638,6 @@
                 <div class="eyebrow">02 · Genealogía del pensamiento</div>
                 <h2 class="scene-title">Ada Byron y la <em>«Ciencia Poética»</em></h2>
               </div>
-              <div class="discreet-reveal-bar">
-                <button type="button" id="btn-ada-step" class="btn btn-subtle" onclick="advanceAdaReveal()" aria-label="Mostrar retrato siguiente">
-                  <i data-lucide="eye" width="15" height="15"></i>
-                  <span id="btn-ada-label">Mostrar</span>
-                </button>
-              </div>
             </div>
 
             <div class="portraits-stage">
@@ -1677,12 +1685,6 @@
                 <div class="eyebrow">03 · Del cálculo mecánico al lenguaje universal</div>
                 <h2 class="scene-title">La máquina de Babbage y la <em>visión</em> de Ada</h2>
               </div>
-              <div class="discreet-reveal-bar">
-                <button type="button" id="btn-babbage-step" class="btn btn-accent" onclick="advanceBabbageStep()">
-                  <i data-lucide="layers" width="16" height="16"></i>
-                  <span id="btn-babbage-label">Paso 1: Charles Babbage</span>
-                </button>
-              </div>
             </div>
 
             <div class="comparison-grid">
@@ -1714,7 +1716,7 @@
             </div>
 
             <blockquote class="ada-quote-block" id="ada-quote-block" style="margin: 0;">
-              <p class="ada-quote-text">«La máquina analítica teje patrones algebraicos igual que el telar de Jacquard teje flores y hojas»</p>
+              <p class="ada-quote-text">«La máquina genera la respuesta técnica; la persona sostiene la intención, el propósito y el sentido.»</p>
             </blockquote>
           </div>
         </section>
@@ -1727,10 +1729,6 @@
                 <div class="eyebrow">04 · Evolución del paradigma formativo</div>
                 <h2 class="scene-title">De STEM a <em>STEAM</em></h2>
               </div>
-              <button type="button" id="btn-steam-toggle" class="btn btn-accent" onclick="toggleSteamTransition()">
-                <i data-lucide="sparkles" width="16" height="16"></i>
-                <span id="btn-steam-label">Incorporar la «A»</span>
-              </button>
             </div>
 
             <div class="steam-stage" id="steam-stage">
@@ -1760,14 +1758,14 @@
               <div class="steam-meanings">
                 <div class="meaning-box">
                   <div class="meaning-kicker">Base técnica · STEM</div>
-                  <h3 class="meaning-title">El cómo · Precisión técnica</h3>
-                  <p class="meaning-desc">Rigor analítico, modelado matemático, arquitectura de software e ingeniería de sistemas robustos.</p>
+                  <p class="meaning-point"><strong>El <em>«cómo»</em>:</strong> capacidad de cálculo, algoritmos y robustez técnica.</p>
+                  <p class="meaning-point"><strong>Infraestructura:</strong> la herramienta que procesa y ejecuta.</p>
                 </div>
 
                 <div class="meaning-box is-arts">
-                  <div class="meaning-kicker" style="color: var(--primary);">La «A» de Artes y Humanidades</div>
-                  <h3 class="meaning-title">El por qué y para quién</h3>
-                  <p class="meaning-desc">Ética, empatía y diseño: supervisión humana, inclusión, propósito social y sentido cultural en cada decisión tecnológica.</p>
+                  <div class="meaning-kicker" style="color: var(--primary);">La «A» no decora: la «A» dirige</div>
+                  <p class="meaning-point"><strong>El <em>«para quién»</em> (Problem framing):</strong> definir qué retos merecen resolverse.</p>
+                  <p class="meaning-point"><strong>El <em>«por qué»</em> (Juicio crítico):</strong> validar el sentido ético y social del resultado.</p>
                 </div>
               </div>
             </div>
@@ -1780,8 +1778,8 @@
             <div class="canvas-toolbar">
               <div>
                 <div class="eyebrow">05 · Co-creación e intención</div>
-                <h2 class="scene-title">La IA es el pincel. La mirada es <em>humana</em>.</h2>
-                <p class="scene-lede" style="margin-top: var(--space-xs);">El algoritmo genera trazos infinitos; solo el criterio humano define el sentido, la autoría y el valor cultural.</p>
+                <h2 class="scene-title">La IA es el <em>pincel</em>. La persona guía el <em>trazo</em>.</h2>
+                <p class="scene-lede" style="margin-top: var(--space-xs);">«El algoritmo genera respuestas y trazos técnicos; solo la mirada humana decide el propósito, aporta la autoría y valida críticamente el resultado.»</p>
               </div>
               <div class="canvas-controls">
                 <div class="brush-selector" role="group" aria-label="Tipo de pincel">
@@ -2235,11 +2233,14 @@
     // Scene 4 state
     let isSteamActive = false;
 
-    // Canvas state for Scene 5 (3 elegant artist brushes)
+    // Canvas state for Scene 5 (3 elegant artist brushes + live auto-paint)
     const canvasStrokes = [];
     let currentStroke = null;
     let isDrawing = false;
     let currentBrushMode = 'calligraphy';
+    let scene5AnimState = 'idle'; // 'idle' | 'playing' | 'done'
+    let autoPaintRaf = null;
+    let autoBrushTip = null;
     let canvasCtx = null;
     let canvasEl = null;
 
@@ -2300,6 +2301,22 @@
     }
 
     function nextScene() {
+      if (currentScene === 1 && adaRevealStep < 2) {
+        setAdaRevealStep(adaRevealStep + 1);
+        return;
+      }
+      if (currentScene === 2 && babbageStep < 2) {
+        setBabbageStep(babbageStep + 1);
+        return;
+      }
+      if (currentScene === 3 && !isSteamActive) {
+        setSteamActive(true);
+        return;
+      }
+      if (currentScene === 4 && scene5AnimState === 'idle') {
+        startCanvasAutoPaint();
+        return;
+      }
       if (currentScene < totalScenes - 1) {
         currentScene += 1;
         updateSceneUI();
@@ -2307,76 +2324,82 @@
     }
 
     function prevScene() {
+      if (currentScene === 1 && adaRevealStep > 0) {
+        setAdaRevealStep(adaRevealStep - 1);
+        return;
+      }
+      if (currentScene === 2 && babbageStep > 0) {
+        setBabbageStep(babbageStep - 1);
+        return;
+      }
+      if (currentScene === 3 && isSteamActive) {
+        setSteamActive(false);
+        return;
+      }
+      if (currentScene === 4 && scene5AnimState !== 'idle') {
+        resetCanvasAutoPaint();
+        return;
+      }
       if (currentScene > 0) {
         currentScene -= 1;
         updateSceneUI();
       }
     }
 
-    // Scene 2: Manual live reveal (0 -> Ada -> Parents -> Reset)
-    function advanceAdaReveal() {
+    // Scene 2: Arrow-driven live reveal (0 -> Ada -> Parents)
+    function setAdaRevealStep(step) {
       const pAda = document.getElementById('portrait-ada');
       const pAnnabella = document.getElementById('portrait-annabella');
       const pByron = document.getElementById('portrait-byron');
-      const lbl = document.getElementById('btn-ada-label');
 
-      adaRevealStep = (adaRevealStep + 1) % 3;
+      adaRevealStep = Math.max(0, Math.min(2, step));
 
       if (adaRevealStep === 0) {
         if (pAda) pAda.classList.remove('is-revealed');
         if (pAnnabella) pAnnabella.classList.remove('is-revealed');
         if (pByron) pByron.classList.remove('is-revealed');
-        if (lbl) lbl.textContent = `Mostrar`;
       } else if (adaRevealStep === 1) {
         if (pAda) pAda.classList.add('is-revealed');
         if (pAnnabella) pAnnabella.classList.remove('is-revealed');
         if (pByron) pByron.classList.remove('is-revealed');
-        if (lbl) lbl.textContent = `Continuar`;
       } else {
         if (pAda) pAda.classList.add('is-revealed');
         if (pAnnabella) pAnnabella.classList.add('is-revealed');
         if (pByron) pByron.classList.add('is-revealed');
-        if (lbl) lbl.textContent = `Ocultar`;
       }
     }
 
     // Scene 3: Step-by-step comparison
-    function advanceBabbageStep() {
+    function setBabbageStep(step) {
       const pBab = document.getElementById('panel-babbage');
       const pAda = document.getElementById('panel-ada-vision');
       const quote = document.getElementById('ada-quote-block');
-      const lbl = document.getElementById('btn-babbage-label');
 
-      babbageStep = (babbageStep + 1) % 3;
+      babbageStep = Math.max(0, Math.min(2, step));
 
       if (babbageStep === 0) {
         if (pBab) pBab.classList.remove('is-revealed');
         if (pAda) pAda.classList.remove('is-revealed');
         if (quote) quote.classList.remove('is-revealed');
-        if (lbl) lbl.textContent = `Paso 1: Charles Babbage`;
       } else if (babbageStep === 1) {
         if (pBab) pBab.classList.add('is-revealed');
         if (pAda) pAda.classList.remove('is-revealed');
         if (quote) quote.classList.remove('is-revealed');
-        if (lbl) lbl.textContent = `Paso 2: Visión de Ada y cita`;
       } else {
         if (pBab) pBab.classList.add('is-revealed');
         if (pAda) pAda.classList.add('is-revealed');
         if (quote) quote.classList.add('is-revealed');
-        if (lbl) lbl.textContent = `Reiniciar comparativa`;
       }
     }
 
     // Scene 4: STEM -> STEAM transition
-    function toggleSteamTransition() {
+    function setSteamActive(active) {
       const stage = document.getElementById('steam-stage');
-      const lbl = document.getElementById('btn-steam-label');
       const tileArt = document.getElementById('tile-art');
 
-      isSteamActive = !isSteamActive;
+      isSteamActive = !!active;
       if (stage) stage.classList.toggle('is-steam', isSteamActive);
       if (tileArt) tileArt.setAttribute('aria-hidden', isSteamActive ? 'false' : 'true');
-      if (lbl) lbl.textContent = isSteamActive ? `Volver a STEM` : `Incorporar la «A»`;
     }
 
     // Scene 5: Interactive geometric co-creation canvas
@@ -2551,14 +2574,219 @@
         }
       }
 
+      if (autoBrushTip) {
+        canvasCtx.save();
+        canvasCtx.globalAlpha = 0.72;
+        canvasCtx.fillStyle = autoBrushTip.color;
+        canvasCtx.beginPath();
+        canvasCtx.arc(autoBrushTip.x, autoBrushTip.y, 2.4, 0, Math.PI * 2);
+        canvasCtx.fill();
+        canvasCtx.globalAlpha = 0.25;
+        canvasCtx.beginPath();
+        canvasCtx.arc(autoBrushTip.x, autoBrushTip.y, 6.5, 0, Math.PI * 2);
+        canvasCtx.fill();
+        canvasCtx.restore();
+      }
+
       canvasCtx.restore();
     }
 
-    function clearHumanCanvas() {
+    function sampleOrganicSpline(anchors, steps, w, h, minW, maxW, wobble) {
+      if (anchors.length < 2) return [];
+      const pts = [];
+      const n = anchors.length - 1;
+      for (let i = 0; i <= steps; i++) {
+        const rawT = i / steps;
+        // Ease-in-out timing along the stroke for natural hand acceleration
+        const t = rawT < 0.5 ? 2 * rawT * rawT : 1 - Math.pow(-2 * rawT + 2, 2) / 2;
+        const scaled = t * n;
+        const idx = Math.min(n - 1, Math.floor(scaled));
+        const lt = scaled - idx;
+
+        const p0 = anchors[Math.max(0, idx - 1)];
+        const p1 = anchors[idx];
+        const p2 = anchors[Math.min(n, idx + 1)];
+        const p3 = anchors[Math.min(n, idx + 2)];
+
+        // Catmull-Rom interpolation for smooth organic curves
+        const lt2 = lt * lt;
+        const lt3 = lt2 * lt;
+        let x = 0.5 * ((2 * p1[0]) + (-p0[0] + p2[0]) * lt + (2 * p0[0] - 5 * p1[0] + 4 * p2[0] - p3[0]) * lt2 + (-p0[0] + 3 * p1[0] - 3 * p2[0] + p3[0]) * lt3);
+        let y = 0.5 * ((2 * p1[1]) + (-p0[1] + p2[1]) * lt + (2 * p0[1] - 5 * p1[1] + 4 * p2[1] - p3[1]) * lt2 + (-p0[1] + 3 * p1[1] - 3 * p2[1] + p3[1]) * lt3);
+
+        // Subtle organic hand micro-variation
+        if (wobble > 0) {
+          x += Math.sin(rawT * Math.PI * 5 + idx) * wobble * 0.004;
+          y += Math.cos(rawT * Math.PI * 4 + idx) * wobble * 0.004;
+        }
+
+        // Tapered calligraphic pressure curve: fine entry -> full belly -> fine lift
+        const pressure = Math.pow(Math.sin(rawT * Math.PI), 0.72);
+        const width = minW + (maxW - minW) * pressure;
+        pts.push({ x: x * w, y: y * h, width });
+      }
+      return pts;
+    }
+
+    function buildAutoPaintChoreography(w, h) {
+      const primary = getCssToken('--primary', '#5620F6');
+      const secondary = getCssToken('--secondary', '#4918AD');
+      const ink = getCssToken('--on-surface', '#1E1B4B');
+      const gold = getCssToken('--thread-gold', '#A68452');
+
+      return [
+        // 1. Soft watercolor atmospheric washes behind the botanical motif
+        {
+          mode: 'watercolor',
+          color: primary,
+          pauseMs: 140,
+          points: sampleOrganicSpline([[0.32, 0.44], [0.46, 0.24], [0.60, 0.34], [0.54, 0.52], [0.38, 0.48]], 44, w, h, 7, 16, 0.8)
+        },
+        {
+          mode: 'watercolor',
+          color: secondary,
+          pauseMs: 140,
+          points: sampleOrganicSpline([[0.18, 0.74], [0.36, 0.62], [0.58, 0.56], [0.78, 0.42]], 42, w, h, 8, 15, 0.7)
+        },
+        // 2. Main sweeping calligraphic stem (S-curve)
+        {
+          mode: 'calligraphy',
+          color: ink,
+          pauseMs: 160,
+          points: sampleOrganicSpline([[0.22, 0.88], [0.34, 0.72], [0.45, 0.54], [0.51, 0.34]], 48, w, h, 1.0, 6.4, 0.4)
+        },
+        // 3. Flowing organic leaves
+        {
+          mode: 'calligraphy',
+          color: ink,
+          pauseMs: 120,
+          points: sampleOrganicSpline([[0.36, 0.70], [0.24, 0.60], [0.18, 0.46], [0.27, 0.52], [0.37, 0.66]], 40, w, h, 0.9, 5.2, 0.35)
+        },
+        {
+          mode: 'calligraphy',
+          color: secondary,
+          pauseMs: 150,
+          points: sampleOrganicSpline([[0.42, 0.62], [0.58, 0.66], [0.70, 0.54], [0.58, 0.54], [0.44, 0.59]], 40, w, h, 0.9, 5.0, 0.35)
+        },
+        // 4. Expressive iris/lotus petals unfurling at the crown
+        {
+          mode: 'calligraphy',
+          color: primary,
+          pauseMs: 110,
+          points: sampleOrganicSpline([[0.50, 0.36], [0.41, 0.24], [0.44, 0.12], [0.53, 0.18], [0.52, 0.34]], 42, w, h, 0.8, 5.8, 0.3)
+        },
+        {
+          mode: 'calligraphy',
+          color: primary,
+          pauseMs: 110,
+          points: sampleOrganicSpline([[0.51, 0.35], [0.62, 0.23], [0.66, 0.14], [0.56, 0.20], [0.51, 0.34]], 38, w, h, 0.8, 5.4, 0.3)
+        },
+        {
+          mode: 'calligraphy',
+          color: secondary,
+          pauseMs: 160,
+          points: sampleOrganicSpline([[0.50, 0.37], [0.34, 0.34], [0.28, 0.24], [0.40, 0.28]], 32, w, h, 0.8, 4.4, 0.3)
+        },
+        // 5. Delicate golden pollen & luminous Jacquard filament ribbons
+        {
+          mode: 'filament',
+          color: gold,
+          pauseMs: 130,
+          points: sampleOrganicSpline([[0.08, 0.78], [0.28, 0.76], [0.48, 0.44], [0.72, 0.26], [0.92, 0.22]], 56, w, h, 1.2, 4.2, 0.45)
+        },
+        {
+          mode: 'filament',
+          color: primary,
+          pauseMs: 0,
+          points: sampleOrganicSpline([[0.12, 0.56], [0.32, 0.66], [0.56, 0.38], [0.78, 0.44], [0.92, 0.32]], 52, w, h, 1.1, 3.8, 0.4)
+        }
+      ];
+    }
+
+    function startCanvasAutoPaint() {
+      if (!canvasEl) return;
+      if (autoPaintRaf) cancelAnimationFrame(autoPaintRaf);
+
+      const rect = canvasEl.getBoundingClientRect();
+      const w = rect.width || 800;
+      const h = rect.height || 410;
+      const plan = buildAutoPaintChoreography(w, h);
+
+      canvasStrokes.length = 0;
+      scene5AnimState = 'playing';
+
+      let strokeIdx = 0;
+      let pointIdx = 0;
+      let pauseUntil = 0;
+      let activeAutoStroke = {
+        mode: plan[0].mode,
+        color: plan[0].color,
+        points: []
+      };
+      canvasStrokes.push(activeAutoStroke);
+
+      let lastTick = performance.now();
+      const stepMs = 15;
+
+      function tick(now) {
+        if (scene5AnimState !== 'playing') return;
+
+        if (now < pauseUntil) {
+          autoPaintRaf = requestAnimationFrame(tick);
+          return;
+        }
+
+        if (now - lastTick >= stepMs) {
+          lastTick = now;
+          const targetStroke = plan[strokeIdx];
+          if (pointIdx < targetStroke.points.length) {
+            const pt = targetStroke.points[pointIdx];
+            activeAutoStroke.points.push(pt);
+            autoBrushTip = { x: pt.x, y: pt.y, color: targetStroke.color };
+            pointIdx += 1;
+            redrawHumanCanvas();
+          } else {
+            const pause = targetStroke.pauseMs || 120;
+            strokeIdx += 1;
+            if (strokeIdx >= plan.length) {
+              autoBrushTip = null;
+              scene5AnimState = 'done';
+              redrawHumanCanvas();
+              return;
+            }
+            pointIdx = 0;
+            autoBrushTip = null;
+            pauseUntil = now + pause;
+            activeAutoStroke = {
+              mode: plan[strokeIdx].mode,
+              color: plan[strokeIdx].color,
+              points: []
+            };
+            canvasStrokes.push(activeAutoStroke);
+            redrawHumanCanvas();
+          }
+        }
+        autoPaintRaf = requestAnimationFrame(tick);
+      }
+
+      autoPaintRaf = requestAnimationFrame(tick);
+    }
+
+    function resetCanvasAutoPaint() {
+      if (autoPaintRaf) {
+        cancelAnimationFrame(autoPaintRaf);
+        autoPaintRaf = null;
+      }
+      autoBrushTip = null;
+      scene5AnimState = 'idle';
       canvasStrokes.length = 0;
       currentStroke = null;
       isDrawing = false;
       redrawHumanCanvas();
+    }
+
+    function clearHumanCanvas() {
+      resetCanvasAutoPaint();
     }
 
     function initHumanCanvas() {
