@@ -114,14 +114,14 @@ Memoritzar **aquesta seqüència** és el 80% de la feina; la resta ho tens en p
 > …pero solo la mirada humana decide el **propósito**, aporta la **autoría** y valida si el resultado tiene sentido y es **ético**.
 
 *(Enllaç)*
-> Y precisamente para llevar esa mirada humana de las aulas a la sociedad, nace nuestra aportación al proyecto…
+> Y eso es justo lo que hacemos desde nuestro proyecto…
 
 `[CLIC → cap a l'Escena 6]`
 
 ---
 
 ### ESCENA 6 · AiSTEAM Network (~40 s)
-> `[PANTALLA]` **AiSTEAM Network**, impulsada por la **Conselleria d'Educació, Cultura i Universitats**, dentro de la iniciativa europea **AiSECRETT**.
+> `[PANTALLA]` …la **AiSTEAM Network**, impulsada por la **Conselleria d'Educació, Cultura i Universitats**, dentro de la iniciativa europea **AiSECRETT**.
 >
 > `[PANTALLA · Xifres de dalt]`  
 > Somos una red de **23 socios** en **12 países**, con **8 universidades europeas**.
@@ -138,31 +138,30 @@ Memoritzar **aquesta seqüència** és el 80% de la feina; la resta ho tens en p
 
 ---
 
-### ESCENA 7 · Los 7 sectores productivos (~35 s)
-> En **siete sectores productivos** que van desde manufactura, movilidad o energía hasta agroalimentación y vivienda. Pero hoy quiero destacaros especialmente **dos**…
+### ESCENA 7 · Los 7 sectores productivos (~25 s)
+> En **siete sectores productivos**. Hoy me quedo con **dos**…
 
 `[CLIC 1 · →]` *(s'obre **Industrias Culturales y Creativas · CCIs**)*
-> El primero son las **Industrias Culturales y Creativas**, el corazón de un encuentro como **CUL.T**: diseño, patrimonio, audiovisual o artes escénicas donde la IA acompaña sin perder la autoría ni el criterio humano.
+> Las **Industrias Culturales y Creativas**, el corazón de **CUL.T**: donde la IA acompaña sin perder la autoría.
 
 `[CLIC 2 · →]` *(s'obre **Servicios No Turísticos**)*
-> Y el segundo son los **Servicios No Turísticos**: educación, cuidados sociosanitarios e inclusión, donde la IA entra de lleno en la vida cotidiana de la gente.  
-> Porque la mejor tecnología no es la más compleja; **es la que logra que ninguna persona se sienta excluida**.
+> Y los **Servicios No Turísticos**: educación, cuidados e inclusión. Porque la mejor tecnología es la que **no excluye a nadie**.
 
 *(Enllaç)*
-> Y para hacer posible que esto no se quede en casos aislados, necesitamos tejer red…
+> Y para que esto no se quede en casos aislados, necesitamos tejer red…
 
 `[CLIC → cap a l'Escena 8]`
 
 ---
 
 ### ESCENA 8 · La Comunidad de Práctica · CoP (~35 s)
-> ¿Cómo articulamos todo esto para que cualquier centro, empresa o entidad pueda participar? A través de nuestra **Comunidad de Práctica**, la **CoP** de AiSTEAM Network.
+> ¿Y cómo podéis participar? A través de nuestra **Comunidad de Práctica**, la **CoP**.
 >
 > `[PANTALLA · Llegir del 01 al 05 en sentit horari]`  
 > Tenéis **cinco formas de colaborar**, con las **mentorías** en el centro y un ciclo abierto que va desde plantear **retos** reales y probar **pilotos** en el aula, hasta **validarlos** entre pares y convertirlos en **casos de éxito** compartidos con toda Europa.
 
 *(Enllaç)*
-> ¿Y queréis ver qué pasa cuando todo este engranaje se pone en marcha? Mirad qué ocurrió con **Lara**…
+> ¿Y qué pasa cuando todo esto se pone en marcha? Mirad qué ocurrió con **Lara**…
 
 `[CLIC → cap a l'Escena 9]`
 
@@ -193,7 +192,7 @@ Memoritzar **aquesta seqüència** és el 80% de la feina; la resta ho tens en p
 ---
 
 ### ESCENA 10 · Cierre y cómo formar parte (~30 s)
-> Si representáis a un centro educativo, a una empresa, a una entidad social o a la administración, os invito a **escanear cualquiera de estos códigos**: podéis entrar en la web de la red, consultar el proyecto europeo o escribirnos directamente para proponer un reto, un piloto o una mentoría.
+> Os invito a **escanear cualquiera de estos códigos**: podéis entrar en la web de la red, consultar el proyecto europeo o escribirnos directamente para proponer un reto, un piloto o una mentoría.
 >
 > `[PAUSA 1 segon mirant el públic]`  
 > Cuando empezamos os pregunté si, al pensar en Inteligencia Artificial, pensabais en algoritmos o en personas.  
