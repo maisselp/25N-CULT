@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="artifact-type" content="narrative">
   <meta name="design-style" content="atelier">
-  <title>Mujeres, IA, STEAM y competencias STEAM · AI-STEAM Network</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <title>Mujeres, IA, STEAM y competencias STEAM · AiSTEAM Network</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
   <script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
   <style>
@@ -96,9 +99,14 @@
       --dur-long: 520ms;
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-    html, body {
+    html,
+    body {
       overflow-x: clip;
       margin: 0;
       padding: 0;
@@ -115,7 +123,9 @@
       cursor: pointer;
     }
 
-    button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+    button:focus-visible,
+    a:focus-visible,
+    [tabindex]:focus-visible {
       outline: 2.5px solid var(--focus);
       outline-offset: 2px;
     }
@@ -368,7 +378,8 @@
       color: var(--on-surface);
     }
 
-    .scene-title em, .hero-title em {
+    .scene-title em,
+    .hero-title em {
       font-family: var(--font-serif);
       font-style: italic;
       font-weight: 400;
@@ -534,42 +545,102 @@
       stroke-dashoffset: 280;
     }
 
-    #scene-1.is-active .aisecrett-ribbon.top.r1 { animation: aisecrett-draw 1.2s var(--ease-out) 0.05s forwards, aisecrett-wave-top 5.5s var(--ease-in-out) 1.3s infinite; }
-    #scene-1.is-active .aisecrett-ribbon.top.r2 { animation: aisecrett-draw 1.2s var(--ease-out) 0.18s forwards, aisecrett-wave-top 5.5s var(--ease-in-out) 1.55s infinite; }
-    #scene-1.is-active .aisecrett-ribbon.top.r3 { animation: aisecrett-draw 1.2s var(--ease-out) 0.31s forwards, aisecrett-wave-top 5.5s var(--ease-in-out) 1.8s infinite; }
+    #scene-1.is-active .aisecrett-ribbon.top.r1 {
+      animation: aisecrett-draw 1.2s var(--ease-out) 0.05s forwards, aisecrett-wave-top 5.5s var(--ease-in-out) 1.3s infinite;
+    }
 
-    #scene-1.is-active .aisecrett-ribbon.bot.r1 { animation: aisecrett-draw 1.2s var(--ease-out) 0.05s forwards, aisecrett-wave-bot 5.5s var(--ease-in-out) 1.3s infinite; }
-    #scene-1.is-active .aisecrett-ribbon.bot.r2 { animation: aisecrett-draw 1.2s var(--ease-out) 0.18s forwards, aisecrett-wave-bot 5.5s var(--ease-in-out) 1.55s infinite; }
-    #scene-1.is-active .aisecrett-ribbon.bot.r3 { animation: aisecrett-draw 1.2s var(--ease-out) 0.31s forwards, aisecrett-wave-bot 5.5s var(--ease-in-out) 1.8s infinite; }
+    #scene-1.is-active .aisecrett-ribbon.top.r2 {
+      animation: aisecrett-draw 1.2s var(--ease-out) 0.18s forwards, aisecrett-wave-top 5.5s var(--ease-in-out) 1.55s infinite;
+    }
+
+    #scene-1.is-active .aisecrett-ribbon.top.r3 {
+      animation: aisecrett-draw 1.2s var(--ease-out) 0.31s forwards, aisecrett-wave-top 5.5s var(--ease-in-out) 1.8s infinite;
+    }
+
+    #scene-1.is-active .aisecrett-ribbon.bot.r1 {
+      animation: aisecrett-draw 1.2s var(--ease-out) 0.05s forwards, aisecrett-wave-bot 5.5s var(--ease-in-out) 1.3s infinite;
+    }
+
+    #scene-1.is-active .aisecrett-ribbon.bot.r2 {
+      animation: aisecrett-draw 1.2s var(--ease-out) 0.18s forwards, aisecrett-wave-bot 5.5s var(--ease-in-out) 1.55s infinite;
+    }
+
+    #scene-1.is-active .aisecrett-ribbon.bot.r3 {
+      animation: aisecrett-draw 1.2s var(--ease-out) 0.31s forwards, aisecrett-wave-bot 5.5s var(--ease-in-out) 1.8s infinite;
+    }
 
     .aisecrett-spark {
       animation: aisecrett-twinkle 4.5s var(--ease-in-out) infinite;
     }
-    .aisecrett-spark.sp2 { animation-delay: 1.5s; }
-    .aisecrett-spark.sp3 { animation-delay: 3.0s; }
+
+    .aisecrett-spark.sp2 {
+      animation-delay: 1.5s;
+    }
+
+    .aisecrett-spark.sp3 {
+      animation-delay: 3.0s;
+    }
 
     @keyframes aisecrett-draw {
-      to { stroke-dashoffset: 0; }
+      to {
+        stroke-dashoffset: 0;
+      }
     }
 
     @keyframes aisecrett-wave-top {
-      0%, 100% { transform: translate(0, 0); opacity: 1; }
-      50% { transform: translate(3px, -3px); opacity: 0.86; }
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translate(3px, -3px);
+        opacity: 0.86;
+      }
     }
 
     @keyframes aisecrett-wave-bot {
-      0%, 100% { transform: translate(0, 0); opacity: 1; }
-      50% { transform: translate(-3px, 3px); opacity: 0.86; }
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translate(-3px, 3px);
+        opacity: 0.86;
+      }
     }
 
     @keyframes aisecrett-breathe {
-      0%, 100% { transform: scale(1.22) translateY(0); filter: drop-shadow(0 10px 24px rgba(86, 32, 246, 0.14)); }
-      50% { transform: scale(1.26) translateY(-4px); filter: drop-shadow(0 16px 34px rgba(86, 32, 246, 0.24)); }
+
+      0%,
+      100% {
+        transform: scale(1.22) translateY(0);
+        filter: drop-shadow(0 10px 24px rgba(86, 32, 246, 0.14));
+      }
+
+      50% {
+        transform: scale(1.26) translateY(-4px);
+        filter: drop-shadow(0 16px 34px rgba(86, 32, 246, 0.24));
+      }
     }
 
     @keyframes aisecrett-twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(0.85); }
-      50% { opacity: 0.85; transform: scale(1.25); }
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(0.85);
+      }
+
+      50% {
+        opacity: 0.85;
+        transform: scale(1.25);
+      }
     }
 
     /* Scene 2: Ada Byron y la Ciencia Poética */
@@ -938,7 +1009,7 @@
       font-weight: 400;
     }
 
-    .meaning-point + .meaning-point {
+    .meaning-point+.meaning-point {
       margin-top: var(--space-xs);
     }
 
@@ -1079,10 +1150,25 @@
       transform: translateY(0);
     }
 
-    .helix-node-card.is-tl { grid-column: 1; grid-row: 1; }
-    .helix-node-card.is-tr { grid-column: 3; grid-row: 1; }
-    .helix-node-card.is-bl { grid-column: 1; grid-row: 3; }
-    .helix-node-card.is-br { grid-column: 3; grid-row: 3; }
+    .helix-node-card.is-tl {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .helix-node-card.is-tr {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .helix-node-card.is-bl {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .helix-node-card.is-br {
+      grid-column: 3;
+      grid-row: 3;
+    }
 
     .helix-node-card.is-primary {
       border-top-color: var(--primary);
@@ -1131,12 +1217,28 @@
       transform: scale(1);
     }
 
+    .helix-core-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--surface-elevated);
+      border-radius: var(--rounded);
+      padding: 0.25rem 0.65rem;
+      margin-top: 0.6rem;
+    }
+
+    .helix-core-logo img {
+      display: block;
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+    }
+
     .helix-core-title {
       font-family: var(--font-label);
       font-size: 0.92rem;
       font-weight: 500;
       letter-spacing: var(--label-tracking);
-      text-transform: uppercase;
       margin: 0;
       color: var(--on-primary);
     }
@@ -1192,9 +1294,11 @@
         grid-template-rows: auto;
         gap: var(--space-md);
       }
+
       .helix-connector-svg {
         display: none;
       }
+
       .helix-node-card.is-tl,
       .helix-node-card.is-tr,
       .helix-node-card.is-bl,
@@ -1203,10 +1307,12 @@
         grid-column: 1;
         grid-row: auto;
       }
+
       .helix-core-hub {
         order: -1;
       }
     }
+
     .network-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
@@ -1398,56 +1504,140 @@
       line-height: 1.5;
     }
 
-    /* Scene 8: CoP AI-STEAM Network */
-    .cop-architecture {
+    /* Scene 8: CoP AiSTEAM Network (Camino circular + Mentorías transversales) */
+    .cop-circle-stage {
+      position: relative;
       display: grid;
-      gap: var(--space-lg);
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 0.95fr) minmax(0, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: var(--space-sm) var(--space-md);
+      align-items: center;
+      padding: var(--space-xs) 0;
     }
 
-    .cop-mentoring-axis {
-      background-color: var(--primary-container);
-      border: 1.5px solid var(--primary);
+    .cop-circle-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cop-spokes-group {
+      opacity: 0;
+      transition: opacity var(--dur-long) var(--ease-out);
+    }
+
+    .cop-spokes-group.is-revealed {
+      opacity: 0.72;
+    }
+
+    .cop-arc-path {
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      opacity: 0;
+      transition: stroke-dashoffset 780ms var(--ease-out), opacity var(--dur-short) var(--ease-out);
+    }
+
+    .cop-arc-path.is-revealed {
+      stroke-dashoffset: 0;
+      opacity: 0.85;
+    }
+
+    .cop-core-mentoring {
+      grid-column: 2;
+      grid-row: 2;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(155deg, var(--primary-container), var(--secondary-container));
+      border: 2px solid var(--primary);
       border-radius: var(--rounded-lg);
       padding: var(--space-md) var(--space-lg);
-      cursor: pointer;
-      text-align: left;
-      width: 100%;
-      display: grid;
-      gap: var(--space-xs);
-      transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+      text-align: center;
+      box-shadow: 0 0 0 6px rgba(86, 32, 246, 0.08), 0 12px 28px rgba(86, 32, 246, 0.14);
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
     }
 
-    .cop-mentoring-axis:hover {
-      background-color: var(--secondary-container);
+    .cop-core-mentoring.is-revealed {
+      opacity: 1;
+      transform: scale(1);
     }
 
-    .cop-flow-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--space-md);
+    .cop-core-kicker {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      letter-spacing: var(--label-tracking);
+      text-transform: uppercase;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.25rem;
     }
 
-    .cop-stage-card {
+    .cop-core-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--on-primary-container);
+      margin: 0 0 0.25rem;
+    }
+
+    .cop-core-desc {
+      margin: 0;
+      font-size: 0.84rem;
+      line-height: 1.4;
+      color: var(--on-primary-container);
+    }
+
+    .cop-node-card {
+      position: relative;
+      z-index: 1;
       background-color: var(--surface-elevated);
       border: var(--rule-stone);
       border-top: 2.5px solid var(--secondary);
       border-radius: var(--rounded);
-      padding: var(--space-md);
-      text-align: left;
+      padding: 0.7rem 1rem;
       display: grid;
-      gap: var(--space-sm);
-      align-content: start;
-      transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+      gap: 0.25rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
     }
 
-    .cop-stage-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
+    .cop-node-card.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .cop-stage-card.is-open {
-      border-top-color: var(--primary);
-      background-color: var(--surface-container-low);
+    .cop-node-card.is-tl { grid-column: 1; grid-row: 1; border-top-color: var(--primary); }
+    .cop-node-card.is-tr { grid-column: 3; grid-row: 1; }
+    .cop-node-card.is-br { grid-column: 3; grid-row: 3; border-top-color: var(--primary); }
+    .cop-node-card.is-bl { grid-column: 1; grid-row: 3; }
+
+    .cop-top-pill {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      align-self: start;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .cop-bottom-logo {
+      grid-column: 2;
+      grid-row: 3;
+      justify-self: center;
+      align-self: end;
+      position: relative;
+      z-index: 2;
     }
 
     .cop-step-num {
@@ -1457,40 +1647,42 @@
       color: var(--primary);
     }
 
-    .cop-card-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-sm);
-    }
-
     .cop-card-title {
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--on-surface);
       margin: 0;
     }
 
-    .cop-collapse {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows var(--dur-short) var(--ease-out);
-    }
-
-    .is-open .cop-collapse {
-      grid-template-rows: 1fr;
-    }
-
-    .cop-collapse-inner {
-      overflow: hidden;
-    }
-
-    .cop-collapse-text {
+    .cop-node-desc {
       margin: 0;
-      padding-top: var(--space-xs);
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       color: var(--on-surface-variant);
-      line-height: 1.48;
+      line-height: 1.42;
+    }
+
+    @media (max-width: 960px) {
+      .cop-circle-stage {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: var(--space-md);
+      }
+      .cop-circle-svg {
+        display: none;
+      }
+      .cop-core-mentoring,
+      .cop-top-pill,
+      .cop-bottom-logo,
+      .cop-node-card.is-tl,
+      .cop-node-card.is-tr,
+      .cop-node-card.is-br,
+      .cop-node-card.is-bl {
+        grid-column: 1;
+        grid-row: auto;
+      }
+      .cop-core-mentoring {
+        order: -1;
+      }
     }
 
     .zero-cost-pill {
@@ -1537,6 +1729,96 @@
       padding: var(--space-lg);
       display: grid;
       gap: var(--space-xs);
+      opacity: 0.14;
+      transform: translateY(10px);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    }
+
+    .lara-metric-tile.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+      border-top-color: var(--primary);
+    }
+
+    .lara-voice-bridge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding: var(--space-sm) var(--space-md);
+      background-color: var(--surface-container-low);
+      border: var(--rule-stone);
+      border-radius: var(--rounded);
+      transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    }
+
+    .lara-voice-bridge.is-resolved {
+      background-color: var(--primary-container);
+      border-color: var(--primary);
+    }
+
+    .lara-wave {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .lara-wave-bar {
+      width: 3px;
+      border-radius: var(--rounded-full);
+      background-color: var(--thread-gold);
+      animation: lara-wave-pulse 1.6s var(--ease-in-out) infinite;
+      transition: background-color var(--dur-short) var(--ease-out);
+    }
+
+    .lara-wave-bar:nth-child(2n) { animation-delay: 0.25s; }
+    .lara-wave-bar:nth-child(3n) { animation-delay: 0.5s; }
+    .lara-wave-bar:nth-child(5n) { animation-delay: 0.75s; }
+
+    .lara-voice-bridge.is-resolved .lara-wave-bar {
+      background-color: var(--primary);
+    }
+
+    .lara-voice-status {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+      transition: color var(--dur-short) var(--ease-out);
+    }
+
+    .lara-voice-bridge.is-resolved .lara-voice-status {
+      color: var(--on-primary-container);
+    }
+
+    @keyframes lara-wave-pulse {
+      0%, 100% { transform: scaleY(0.45); opacity: 0.65; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    .lara-right-col {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .lara-attribution-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding-top: var(--space-sm);
+      border-top: var(--rule-stone);
+    }
+
+    .lara-attribution-bar img {
+      display: block;
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.9;
     }
 
     .lara-metric-num {
@@ -1674,6 +1956,7 @@
 
     /* Responsive adjustments */
     @media (max-width: 960px) {
+
       .cover-layout,
       .network-grid,
       .lara-layout,
@@ -1731,7 +2014,10 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
@@ -1739,6 +2025,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="presentation-shell">
     <!-- Top index bar (static) -->
@@ -1752,16 +2039,26 @@
       <nav class="jacquard-rail" aria-label="Progreso de la ponencia por escenas">
         <div class="jacquard-rail-line"></div>
         <div class="jacquard-rail-progress" id="rail-progress"></div>
-        <button type="button" class="rail-node is-active" data-goto="0" aria-label="Escena 1: Portada" onclick="goToScene(0)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="1" aria-label="Escena 2: Ada Byron" onclick="goToScene(1)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="2" aria-label="Escena 3: Babbage y Ada" onclick="goToScene(2)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="3" aria-label="Escena 4: De STEM a STEAM" onclick="goToScene(3)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="4" aria-label="Escena 5: Lienzo interactivo" onclick="goToScene(4)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="5" aria-label="Escena 6: Red europea" onclick="goToScene(5)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="6" aria-label="Escena 7: Siete sectores" onclick="goToScene(6)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="7" aria-label="Escena 8: Comunidad de Práctica" onclick="goToScene(7)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="8" aria-label="Escena 9: Proyecto LARA" onclick="goToScene(8)"><span class="rail-node-dot"></span></button>
-        <button type="button" class="rail-node" data-goto="9" aria-label="Escena 10: Cierre y contacto" onclick="goToScene(9)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node is-active" data-goto="0" aria-label="Escena 1: Portada"
+          onclick="goToScene(0)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="1" aria-label="Escena 2: Ada Byron"
+          onclick="goToScene(1)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="2" aria-label="Escena 3: Babbage y Ada"
+          onclick="goToScene(2)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="3" aria-label="Escena 4: De STEM a STEAM"
+          onclick="goToScene(3)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="4" aria-label="Escena 5: Lienzo interactivo"
+          onclick="goToScene(4)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="5" aria-label="Escena 6: Red europea"
+          onclick="goToScene(5)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="6" aria-label="Escena 7: Siete sectores"
+          onclick="goToScene(6)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="7" aria-label="Escena 8: Comunidad de Práctica"
+          onclick="goToScene(7)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="8" aria-label="Escena 9: Proyecto LARA"
+          onclick="goToScene(8)"><span class="rail-node-dot"></span></button>
+        <button type="button" class="rail-node" data-goto="9" aria-label="Escena 10: Cierre y contacto"
+          onclick="goToScene(9)"><span class="rail-node-dot"></span></button>
       </nav>
     </div>
 
@@ -1769,21 +2066,24 @@
     <main class="deck-viewport">
       <!-- Continuous Jacquard thread across all 10 scenes -->
       <div class="continuous-thread-layer" aria-hidden="true">
-        <svg class="continuous-thread-svg" id="continuous-thread-svg" viewBox="0 0 10000 600" preserveAspectRatio="none">
+        <svg class="continuous-thread-svg" id="continuous-thread-svg" viewBox="0 0 10000 600"
+          preserveAspectRatio="none">
           <defs>
             <linearGradient id="jacquard-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="var(--thread-gold)" stop-opacity="0.35"/>
-              <stop offset="35%" stop-color="var(--secondary)" stop-opacity="0.45"/>
-              <stop offset="65%" stop-color="var(--primary)" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="var(--secondary)" stop-opacity="0.4"/>
+              <stop offset="0%" stop-color="var(--thread-gold)" stop-opacity="0.35" />
+              <stop offset="35%" stop-color="var(--secondary)" stop-opacity="0.45" />
+              <stop offset="65%" stop-color="var(--primary)" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="var(--secondary)" stop-opacity="0.4" />
             </linearGradient>
           </defs>
           <!-- Primary continuous warp thread -->
-          <path d="M 0,470 C 450,470 700,190 1200,260 C 1700,330 2050,150 2500,220 C 3000,295 3400,410 3900,280 C 4400,150 4800,360 5300,290 C 5800,220 6200,420 6750,300 C 7250,190 7700,380 8250,270 C 8800,165 9300,410 10000,320"
-                fill="none" stroke="url(#jacquard-grad)" stroke-width="1.6"/>
+          <path
+            d="M 0,470 C 450,470 700,190 1200,260 C 1700,330 2050,150 2500,220 C 3000,295 3400,410 3900,280 C 4400,150 4800,360 5300,290 C 5800,220 6200,420 6750,300 C 7250,190 7700,380 8250,270 C 8800,165 9300,410 10000,320"
+            fill="none" stroke="url(#jacquard-grad)" stroke-width="1.6" />
           <!-- Secondary delicate counter-thread -->
-          <path d="M 0,485 C 520,455 820,235 1280,295 C 1780,355 2120,180 2620,245 C 3100,310 3480,430 3980,305 C 4480,180 4880,385 5380,315 C 5880,245 6280,435 6830,320 C 7330,215 7780,395 8330,295 C 8880,190 9380,425 10000,340"
-                fill="none" stroke="var(--outline-variant)" stroke-width="0.9" stroke-dasharray="6 6"/>
+          <path
+            d="M 0,485 C 520,455 820,235 1280,295 C 1780,355 2120,180 2620,245 C 3100,310 3480,430 3980,305 C 4480,180 4880,385 5380,315 C 5880,245 6280,435 6830,320 C 7330,215 7780,395 8330,295 C 8880,190 9380,425 10000,340"
+            fill="none" stroke="var(--outline-variant)" stroke-width="0.9" stroke-dasharray="6 6" />
         </svg>
       </div>
 
@@ -1793,7 +2093,9 @@
           <div class="scene-inner">
             <div class="cover-brand-bar">
               <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT" class="cover-logo-hero">
-              <img src="logo-conselleria.png" alt="Conselleria d'Educació, Cultura i Universitats · Generalitat Valenciana" class="cover-logo-conselleria">
+              <img src="logo-conselleria.png"
+                alt="Conselleria d'Educació, Cultura i Universitats · Generalitat Valenciana"
+                class="cover-logo-conselleria">
             </div>
             <div class="cover-layout">
               <div style="display: grid; gap: var(--space-xl);">
@@ -1802,7 +2104,7 @@
                 </div>
 
                 <h1 class="hero-title">
-                  <em>Mujeres</em>, IA, STEAM y competencias <em>STEAM</em>. La red <em>AI-STEAM Network</em>
+                  <em>Mujeres</em>, IA, STEAM y competencias <em>STEAM</em>. La red <em>AiSTEAM Network</em>
                 </h1>
 
                 <div class="cover-speaker">
@@ -1815,35 +2117,47 @@
 
               <!-- Motion graphics plate: AI-SECRETT interlocking symbol -->
               <div class="cover-loom-plate" aria-hidden="true">
-                <svg viewBox="0 0 360 400" width="400" height="420" style="max-width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 360 400" width="400" height="420" style="max-width: 100%; height: auto;"
+                  xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <pattern id="cover-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="var(--outline-variant)" stroke-width="0.6"/>
+                      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="var(--outline-variant)" stroke-width="0.6" />
                     </pattern>
-                    <linearGradient id="aisecrett-fade-right" gradientUnits="userSpaceOnUse" x1="96" y1="0" x2="264" y2="0">
-                      <stop offset="0%" stop-color="var(--primary)" stop-opacity="1"/>
-                      <stop offset="55%" stop-color="var(--secondary)" stop-opacity="1"/>
-                      <stop offset="100%" stop-color="var(--secondary)" stop-opacity="0"/>
+                    <linearGradient id="aisecrett-fade-right" gradientUnits="userSpaceOnUse" x1="96" y1="0" x2="264"
+                      y2="0">
+                      <stop offset="0%" stop-color="var(--primary)" stop-opacity="1" />
+                      <stop offset="55%" stop-color="var(--secondary)" stop-opacity="1" />
+                      <stop offset="100%" stop-color="var(--secondary)" stop-opacity="0" />
                     </linearGradient>
-                    <linearGradient id="aisecrett-fade-left" gradientUnits="userSpaceOnUse" x1="96" y1="0" x2="264" y2="0">
-                      <stop offset="0%" stop-color="var(--secondary)" stop-opacity="0"/>
-                      <stop offset="45%" stop-color="var(--secondary)" stop-opacity="1"/>
-                      <stop offset="100%" stop-color="var(--primary)" stop-opacity="1"/>
+                    <linearGradient id="aisecrett-fade-left" gradientUnits="userSpaceOnUse" x1="96" y1="0" x2="264"
+                      y2="0">
+                      <stop offset="0%" stop-color="var(--secondary)" stop-opacity="0" />
+                      <stop offset="45%" stop-color="var(--secondary)" stop-opacity="1" />
+                      <stop offset="100%" stop-color="var(--primary)" stop-opacity="1" />
                     </linearGradient>
                   </defs>
                   <g class="aisecrett-motion-emblem">
                     <!-- Top 3 concentric arcs (compact square alignment: x=96..264) -->
-                    <path class="aisecrett-ribbon top r1" d="M 164,196 A 32,32 0 0 1 196,164 L 264,164" stroke="url(#aisecrett-fade-right)"/>
-                    <path class="aisecrett-ribbon top r2" d="M 130,196 A 66,66 0 0 1 196,130 L 264,130" stroke="url(#aisecrett-fade-right)"/>
-                    <path class="aisecrett-ribbon top r3" d="M 96,196 A 100,100 0 0 1 196,96 L 264,96" stroke="url(#aisecrett-fade-right)"/>
+                    <path class="aisecrett-ribbon top r1" d="M 164,196 A 32,32 0 0 1 196,164 L 264,164"
+                      stroke="url(#aisecrett-fade-right)" />
+                    <path class="aisecrett-ribbon top r2" d="M 130,196 A 66,66 0 0 1 196,130 L 264,130"
+                      stroke="url(#aisecrett-fade-right)" />
+                    <path class="aisecrett-ribbon top r3" d="M 96,196 A 100,100 0 0 1 196,96 L 264,96"
+                      stroke="url(#aisecrett-fade-right)" />
                     <!-- Bottom 3 concentric arcs (compact square alignment: x=96..264) -->
-                    <path class="aisecrett-ribbon bot r1" d="M 96,236 L 164,236 A 32,32 0 0 0 196,204" stroke="url(#aisecrett-fade-left)"/>
-                    <path class="aisecrett-ribbon bot r2" d="M 96,270 L 164,270 A 66,66 0 0 0 230,204" stroke="url(#aisecrett-fade-left)"/>
-                    <path class="aisecrett-ribbon bot r3" d="M 96,304 L 164,304 A 100,100 0 0 0 264,204" stroke="url(#aisecrett-fade-left)"/>
+                    <path class="aisecrett-ribbon bot r1" d="M 96,236 L 164,236 A 32,32 0 0 0 196,204"
+                      stroke="url(#aisecrett-fade-left)" />
+                    <path class="aisecrett-ribbon bot r2" d="M 96,270 L 164,270 A 66,66 0 0 0 230,204"
+                      stroke="url(#aisecrett-fade-left)" />
+                    <path class="aisecrett-ribbon bot r3" d="M 96,304 L 164,304 A 100,100 0 0 0 264,204"
+                      stroke="url(#aisecrett-fade-left)" />
                     <!-- Subtle editorial constellation sparks -->
-                    <circle class="aisecrett-spark sp1" cx="74" cy="142" r="3" fill="var(--thread-gold)" style="transform-origin: 74px 142px;"/>
-                    <circle class="aisecrett-spark sp2" cx="288" cy="248" r="3" fill="var(--thread-gold)" style="transform-origin: 288px 248px;"/>
-                    <circle class="aisecrett-spark sp3" cx="256" cy="64" r="2.5" fill="var(--primary)" style="transform-origin: 256px 64px;"/>
+                    <circle class="aisecrett-spark sp1" cx="74" cy="142" r="3" fill="var(--thread-gold)"
+                      style="transform-origin: 74px 142px;" />
+                    <circle class="aisecrett-spark sp2" cx="288" cy="248" r="3" fill="var(--thread-gold)"
+                      style="transform-origin: 288px 248px;" />
+                    <circle class="aisecrett-spark sp3" cx="256" cy="64" r="2.5" fill="var(--primary)"
+                      style="transform-origin: 256px 64px;" />
                   </g>
                 </svg>
               </div>
@@ -1918,26 +2232,30 @@
                   <div class="panel-kicker">Motor mecánico</div>
                   <h3 class="panel-title">Charles Babbage</h3>
                   <p class="panel-subtitle">Cálculo numérico</p>
-                  <p class="panel-desc">Concibe la Máquina Analítica para automatizar operaciones aritméticas y tablas matemáticas con precisión mecánica.</p>
+                  <p class="panel-desc">Concibe la Máquina Analítica para automatizar operaciones aritméticas y tablas
+                    matemáticas con precisión mecánica.</p>
                 </div>
               </article>
 
               <!-- Panel 2: Ada Byron & Telar de Jacquard -->
               <article class="machine-panel is-ada" id="panel-ada-vision">
                 <div class="engraving-plate" style="border-color: var(--primary);">
-                  <img src="machine-jacquard.jpg" alt="Ilustración del Telar de Jacquard y la visión simbólica de Ada Byron">
+                  <img src="machine-jacquard.jpg"
+                    alt="Ilustración del Telar de Jacquard y la visión simbólica de Ada Byron">
                 </div>
                 <div>
                   <div class="panel-kicker" style="color: var(--primary);">Salto conceptual</div>
                   <h3 class="panel-title">Ada Byron</h3>
                   <p class="panel-subtitle">Símbolos, música y cultura</p>
-                  <p class="panel-desc">Comprende que la máquina puede manipular cualquier símbolo sujeto a reglas: partituras, lenguaje, tejido y creación humana.</p>
+                  <p class="panel-desc">Comprende que la máquina puede manipular cualquier símbolo sujeto a reglas:
+                    partituras, lenguaje, tejido y creación humana.</p>
                 </div>
               </article>
             </div>
 
             <blockquote class="ada-quote-block" id="ada-quote-block" style="margin: 0;">
-              <p class="ada-quote-text">«La máquina genera la respuesta técnica; la persona sostiene la intención, el propósito y el sentido.»</p>
+              <p class="ada-quote-text">«La máquina genera la respuesta técnica; la persona sostiene la intención, el
+                propósito y el sentido.»</p>
             </blockquote>
           </div>
         </section>
@@ -1979,14 +2297,17 @@
               <div class="steam-meanings">
                 <div class="meaning-box">
                   <div class="meaning-kicker">Base técnica · STEM</div>
-                  <p class="meaning-point"><strong>El <em>«cómo»</em>:</strong> capacidad de cálculo, algoritmos y robustez técnica.</p>
+                  <p class="meaning-point"><strong>El <em>«cómo»</em>:</strong> capacidad de cálculo, algoritmos y
+                    robustez técnica.</p>
                   <p class="meaning-point"><strong>Infraestructura:</strong> la herramienta que procesa y ejecuta.</p>
                 </div>
 
                 <div class="meaning-box is-arts">
                   <div class="meaning-kicker" style="color: var(--primary);">La «A» no decora: la «A» dirige</div>
-                  <p class="meaning-point"><strong>El <em>«para quién»</em> (Problem framing):</strong> definir qué retos merecen resolverse.</p>
-                  <p class="meaning-point"><strong>El <em>«por qué»</em> (Juicio crítico):</strong> validar el sentido ético y social del resultado.</p>
+                  <p class="meaning-point"><strong>El <em>«para quién»</em> (Problem framing):</strong> definir qué
+                    retos merecen resolverse.</p>
+                  <p class="meaning-point"><strong>El <em>«por qué»</em> (Juicio crítico):</strong> validar el sentido
+                    ético y social del resultado.</p>
                 </div>
               </div>
             </div>
@@ -2000,13 +2321,18 @@
               <div>
                 <div class="eyebrow">05 · Co-creación e intención</div>
                 <h2 class="scene-title">La IA es el <em>pincel</em>. La persona guía el <em>trazo</em>.</h2>
-                <p class="scene-lede" style="margin-top: var(--space-xs);">«El algoritmo genera respuestas y trazos técnicos; solo la mirada humana decide el propósito, aporta la autoría y valida críticamente el resultado.»</p>
+                <p class="scene-lede" style="margin-top: var(--space-xs);">«El algoritmo genera respuestas y trazos
+                  técnicos; solo la mirada humana decide el propósito, aporta la autoría y valida críticamente el
+                  resultado.»</p>
               </div>
               <div class="canvas-controls">
                 <div class="brush-selector" role="group" aria-label="Tipo de pincel">
-                  <button type="button" class="brush-btn is-active" data-brush="calligraphy" onclick="setBrushMode('calligraphy', this)">Caligráfico</button>
-                  <button type="button" class="brush-btn" data-brush="watercolor" onclick="setBrushMode('watercolor', this)">Acuarela</button>
-                  <button type="button" class="brush-btn" data-brush="filament" onclick="setBrushMode('filament', this)">Filamento</button>
+                  <button type="button" class="brush-btn is-active" data-brush="calligraphy"
+                    onclick="setBrushMode('calligraphy', this)">Caligráfico</button>
+                  <button type="button" class="brush-btn" data-brush="watercolor"
+                    onclick="setBrushMode('watercolor', this)">Acuarela</button>
+                  <button type="button" class="brush-btn" data-brush="filament"
+                    onclick="setBrushMode('filament', this)">Filamento</button>
                 </div>
                 <button type="button" class="btn btn-subtle" onclick="clearHumanCanvas()">
                   <i data-lucide="eraser" width="16" height="16"></i>
@@ -2027,15 +2353,15 @@
             <div>
               <div class="scene-header-row">
                 <div>
-                  <div class="eyebrow">06 · AI-STEAM Network</div>
-                  <h2 class="scene-title">El ecosistema de la <em>Cuádruple Hélice</em>: del talento al impacto</h2>
+                  <div class="eyebrow">06 · <span style="text-transform: none;">AiSTEAM</span> Network</div>
+                  <h2 class="scene-title">Nuestro <em>proyecto</em>: del talento al impacto real</h2>
                 </div>
                 <div class="aisecrett-logo-plate">
-                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AiSECRETT">
                 </div>
               </div>
-              <p class="scene-lede" style="margin-top: var(--space-xs);">Un puente público que conecta necesidades reales con soluciones humanas con IA.</p>
-              <div class="helix-kpi-bar" aria-label="Cifras del consorcio AI-SECRETT">
+              <p class="scene-lede" style="margin-top: var(--space-xs);">Conectando necesidades reales con soluciones humanas con IA.</p>
+              <div class="helix-kpi-bar" aria-label="Cifras del consorcio AiSECRETT">
                 <span class="helix-kpi-pill"><strong>23</strong> socios</span>
                 <span class="helix-kpi-pill"><strong>12</strong> países</span>
                 <span class="helix-kpi-pill"><strong>8</strong> universidades europeas</span>
@@ -2045,20 +2371,25 @@
             <div class="helix-hub-stage">
               <svg class="helix-connector-svg" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
-                  <marker id="helix-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 1 2 L 8 5 L 1 8 z" fill="var(--primary)"/>
+                  <marker id="helix-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6"
+                    orient="auto-start-reverse">
+                    <path d="M 1 2 L 8 5 L 1 8 z" fill="var(--primary)" />
                   </marker>
                 </defs>
-                <line id="helix-arrow-1" class="helix-arrow-line" x1="255" y1="88" x2="365" y2="132" stroke="var(--primary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)"/>
-                <line id="helix-arrow-2" class="helix-arrow-line" x1="745" y1="88" x2="635" y2="132" stroke="var(--primary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)"/>
-                <line id="helix-arrow-3" class="helix-arrow-line" x1="255" y1="232" x2="365" y2="188" stroke="var(--secondary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)"/>
-                <line id="helix-arrow-4" class="helix-arrow-line" x1="745" y1="232" x2="635" y2="188" stroke="var(--secondary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)"/>
+                <line id="helix-arrow-1" class="helix-arrow-line" x1="255" y1="88" x2="365" y2="132"
+                  stroke="var(--primary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)" />
+                <line id="helix-arrow-2" class="helix-arrow-line" x1="745" y1="88" x2="635" y2="132"
+                  stroke="var(--primary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)" />
+                <line id="helix-arrow-3" class="helix-arrow-line" x1="255" y1="232" x2="365" y2="188"
+                  stroke="var(--secondary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)" />
+                <line id="helix-arrow-4" class="helix-arrow-line" x1="745" y1="232" x2="635" y2="188"
+                  stroke="var(--secondary)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#helix-arrow)" />
               </svg>
 
               <article class="helix-node-card is-primary is-tl" id="helix-node-1">
                 <div class="helix-node-head">
                   <i data-lucide="graduation-cap" width="16" height="16" style="color: var(--primary);"></i>
-                  <h3 class="helix-node-title">1. Educación y Talento (FP y Universidad)</h3>
+                  <h3 class="helix-node-title">1. Educación Superior (FP y universidad)</h3>
                 </div>
                 <p class="helix-node-desc">Estudiantes y docentes resolviendo retos con IA ética y creatividad.</p>
               </article>
@@ -2066,44 +2397,48 @@
               <article class="helix-node-card is-tr" id="helix-node-2">
                 <div class="helix-node-head">
                   <i data-lucide="factory" width="16" height="16" style="color: var(--secondary);"></i>
-                  <h3 class="helix-node-title">2. Empresa e Industria (Pymes y Sectores)</h3>
+                  <h3 class="helix-node-title">2. Empresa e Innovación</h3>
                 </div>
                 <p class="helix-node-desc">Necesidades reales del mercado transformadas en proyectos de aula.</p>
               </article>
 
               <div class="helix-core-hub" id="helix-core-hub">
-                <div class="helix-core-title">AI-STEAM Network (CoP)</div>
-                <p class="helix-core-sub">El puente público de innovación</p>
+                <div class="helix-core-title">★ AiSTEAM NETWORK ★</div>
+                <p class="helix-core-sub">Iniciativa europea (AiSECRETT)</p>
+                <div class="helix-core-logo">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AiSECRETT">
+                </div>
               </div>
 
               <article class="helix-node-card is-bl" id="helix-node-3">
                 <div class="helix-node-head">
                   <i data-lucide="users" width="16" height="16" style="color: var(--secondary);"></i>
-                  <h3 class="helix-node-title">3. Sociedad Civil y Tercer Sector</h3>
+                  <h3 class="helix-node-title">3. Sociedad civil y ONG</h3>
                 </div>
-                <p class="helix-node-desc">Asociaciones, colectivos y personas que definen el impacto social y la inclusión.</p>
+                <p class="helix-node-desc">Asociaciones, colectivos y personas que definen el impacto social y la
+                  inclusión.</p>
               </article>
 
               <article class="helix-node-card is-primary is-br" id="helix-node-4">
                 <div class="helix-node-head">
                   <i data-lucide="landmark" width="16" height="16" style="color: var(--primary);"></i>
-                  <h3 class="helix-node-title">4. Administración Pública (Conselleria d'Educació)</h3>
+                  <h3 class="helix-node-title">4. Administración pública</h3>
                 </div>
-                <p class="helix-node-desc">Orquestación pública, validación para los centros.</p>
+                <p class="helix-node-desc">Impulso institucional, supervisión ética y transferencia abierta de la innovación.</p>
               </article>
             </div>
 
-            <div class="helix-footer-band">aisteam.edu.gva.es · Proyecto AI-SECRETT (Digital Europe)</div>
+            <div class="helix-footer-band">AiSTEAM Network impulsada por la Conselleria d'Educació, Cultura i Universitats</div>
           </div>
         </section>
 
-        <!-- ESCENA 7: LOS 7 SECTORES PRODUCTIVOS DE AI-SECRETT -->
+        <!-- ESCENA 7: LOS 7 SECTORES PRODUCTIVOS DE AiSECRETT -->
         <section class="scene" id="scene-7" aria-hidden="true">
           <div class="scene-inner">
             <div class="scene-header-row">
               <div>
                 <div class="eyebrow">07 · Áreas sectoriales de aplicación</div>
-                <h2 class="scene-title">Los <em>7 sectores</em> productivos de AI-SECRETT</h2>
+                <h2 class="scene-title">Los <em>7 sectores</em> productivos de AiSECRETT</h2>
               </div>
               <div class="aisecrett-logo-plate">
                 <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
@@ -2117,7 +2452,12 @@
                   <h3 class="sector-title">Industrias Culturales y Creativas (CCIs)</h3>
                   <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
                 </div>
-                <div class="sector-body"><div class="sector-body-inner"><p class="sector-body-text">Diseño, patrimonio, audiovisual, música y artes escénicas con flujos humano-IA que preservan la autoría y la diversidad cultural.</p></div></div>
+                <div class="sector-body">
+                  <div class="sector-body-inner">
+                    <p class="sector-body-text">Diseño, patrimonio, audiovisual, música y artes escénicas con flujos
+                      humano-IA que preservan la autoría y la diversidad cultural.</p>
+                  </div>
+                </div>
               </button>
 
               <button type="button" class="sector-card" onclick="toggleSectorCard(this)" aria-expanded="false">
@@ -2126,7 +2466,12 @@
                   <h3 class="sector-title">Manufactura</h3>
                   <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
                 </div>
-                <div class="sector-body"><div class="sector-body-inner"><p class="sector-body-text">Fabricación avanzada, mantenimiento predictivo, control de calidad por visión artificial y diseño industrial sostenible.</p></div></div>
+                <div class="sector-body">
+                  <div class="sector-body-inner">
+                    <p class="sector-body-text">Fabricación avanzada, mantenimiento predictivo, control de calidad por
+                      visión artificial y diseño industrial sostenible.</p>
+                  </div>
+                </div>
               </button>
 
               <button type="button" class="sector-card" onclick="toggleSectorCard(this)" aria-expanded="false">
@@ -2135,7 +2480,12 @@
                   <h3 class="sector-title">Movilidad y Transporte</h3>
                   <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
                 </div>
-                <div class="sector-body"><div class="sector-body-inner"><p class="sector-body-text">Optimización logística, movilidad urbana descarbonizada, seguridad vial inteligente y accesibilidad en el transporte.</p></div></div>
+                <div class="sector-body">
+                  <div class="sector-body-inner">
+                    <p class="sector-body-text">Optimización logística, movilidad urbana descarbonizada, seguridad vial
+                      inteligente y accesibilidad en el transporte.</p>
+                  </div>
+                </div>
               </button>
 
               <button type="button" class="sector-card" onclick="toggleSectorCard(this)" aria-expanded="false">
@@ -2144,7 +2494,12 @@
                   <h3 class="sector-title">Energía y Medio Ambiente</h3>
                   <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
                 </div>
-                <div class="sector-body"><div class="sector-body-inner"><p class="sector-body-text">Eficiencia energética en edificios, predicción solar, monitorización ambiental y transición ecológica basada en datos.</p></div></div>
+                <div class="sector-body">
+                  <div class="sector-body-inner">
+                    <p class="sector-body-text">Eficiencia energética en edificios, predicción solar, monitorización
+                      ambiental y transición ecológica basada en datos.</p>
+                  </div>
+                </div>
               </button>
 
               <button type="button" class="sector-card" onclick="toggleSectorCard(this)" aria-expanded="false">
@@ -2153,7 +2508,12 @@
                   <h3 class="sector-title">Agroalimentación</h3>
                   <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
                 </div>
-                <div class="sector-body"><div class="sector-body-inner"><p class="sector-body-text">Agricultura de precisión, gestión hídrica responsable, trazabilidad alimentaria y reducción del desperdicio.</p></div></div>
+                <div class="sector-body">
+                  <div class="sector-body-inner">
+                    <p class="sector-body-text">Agricultura de precisión, gestión hídrica responsable, trazabilidad
+                      alimentaria y reducción del desperdicio.</p>
+                  </div>
+                </div>
               </button>
 
               <button type="button" class="sector-card" onclick="toggleSectorCard(this)" aria-expanded="false">
@@ -2162,7 +2522,12 @@
                   <h3 class="sector-title">Vivienda</h3>
                   <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
                 </div>
-                <div class="sector-body"><div class="sector-body-inner"><p class="sector-body-text">Hábitat saludable, edificación inteligente, confort térmico accesible y rehabilitación urbana centrada en las personas.</p></div></div>
+                <div class="sector-body">
+                  <div class="sector-body-inner">
+                    <p class="sector-body-text">Hábitat saludable, edificación inteligente, confort térmico accesible y
+                      rehabilitación urbana centrada en las personas.</p>
+                  </div>
+                </div>
               </button>
 
               <button type="button" class="sector-card" onclick="toggleSectorCard(this)" aria-expanded="false">
@@ -2171,7 +2536,12 @@
                   <h3 class="sector-title">Servicios No Turísticos</h3>
                   <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
                 </div>
-                <div class="sector-body"><div class="sector-body-inner"><p class="sector-body-text">Cuidados sociosanitarios, educación, inclusión, comercio local y servicios públicos digitales centrados en el bienestar.</p></div></div>
+                <div class="sector-body">
+                  <div class="sector-body-inner">
+                    <p class="sector-body-text">Cuidados sociosanitarios, educación, inclusión, comercio local y
+                      servicios públicos digitales centrados en el bienestar.</p>
+                  </div>
+                </div>
               </button>
             </div>
           </div>
@@ -2182,75 +2552,99 @@
           <div class="scene-inner">
             <div class="scene-header-row">
               <div>
-                <div class="eyebrow">08 · Modelo operativo Learning by Developing</div>
-                <h2 class="scene-title">La Comunidad de Práctica <em>(CoP)</em> AI-STEAM Network</h2>
+                <div class="eyebrow">08 · Cómo colaborar dentro de la red</div>
+                <h2 class="scene-title">La Comunidad de Práctica <em>(CoP)</em> AiSTEAM Network</h2>
               </div>
-              <div style="display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; justify-content: flex-end;">
+            </div>
+
+            <div class="cop-circle-stage">
+              <svg class="cop-circle-svg" viewBox="0 0 1000 340" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <marker id="cop-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6"
+                    orient="auto-start-reverse">
+                    <path d="M 1 2 L 8 5 L 1 8 z" fill="var(--primary)" />
+                  </marker>
+                </defs>
+                <!-- Subtle orbital track -->
+                <ellipse cx="500" cy="170" rx="285" ry="118" fill="none" stroke="var(--outline-variant)"
+                  stroke-width="1.2" stroke-dasharray="5 5" opacity="0.6" />
+
+                <!-- Transversal mentoring spokes radiating from center -->
+                <g class="cop-spokes-group" id="cop-spokes">
+                  <line x1="500" y1="170" x2="265" y2="75" stroke="var(--thread-gold)" stroke-width="1.4" stroke-dasharray="4 4" />
+                  <line x1="500" y1="170" x2="735" y2="75" stroke="var(--thread-gold)" stroke-width="1.4" stroke-dasharray="4 4" />
+                  <line x1="500" y1="170" x2="735" y2="265" stroke="var(--thread-gold)" stroke-width="1.4" stroke-dasharray="4 4" />
+                  <line x1="500" y1="170" x2="265" y2="265" stroke="var(--thread-gold)" stroke-width="1.4" stroke-dasharray="4 4" />
+                </g>
+
+                <!-- Clockwise progressive cycle arcs (exact 360° closure on ellipse 500,170 rx=285 ry=118) -->
+                <path id="cop-arc-1" class="cop-arc-path" d="M 215,170 A 285,118 0 0 1 357.5,67.8"
+                  stroke="var(--primary)" marker-end="url(#cop-arrow)" />
+                <path id="cop-arc-2" class="cop-arc-path" d="M 357.5,67.8 A 285,118 0 0 1 701.5,86.6"
+                  stroke="var(--primary)" marker-end="url(#cop-arrow)" />
+                <path id="cop-arc-3" class="cop-arc-path" d="M 701.5,86.6 A 285,118 0 0 1 701.5,253.4"
+                  stroke="var(--secondary)" marker-end="url(#cop-arrow)" />
+                <path id="cop-arc-4" class="cop-arc-path" d="M 701.5,253.4 A 285,118 0 0 1 215,170"
+                  stroke="var(--primary)" marker-end="url(#cop-arrow)" />
+              </svg>
+
+              <!-- 02 · Retos (Top-Left) -->
+              <article class="cop-node-card is-tl" id="cop-node-1">
+                <span class="cop-step-num">02</span>
+                <h3 class="cop-card-title">Retos</h3>
+                <p class="cop-node-desc">Necesidades reales planteadas por centros, administraciones, empresas o
+                  entidades sociales.</p>
+              </article>
+
+              <!-- Píldora centrada arriba: 5 opciones -->
+              <div class="cop-top-pill">
                 <span class="zero-cost-pill">
                   <i data-lucide="layers" width="15" height="15"></i>
                   <span>5 opciones para colaborar en la CoP</span>
                 </span>
+              </div>
+
+              <!-- 03 · Pilotos (Top-Right) -->
+              <article class="cop-node-card is-tr" id="cop-node-2">
+                <span class="cop-step-num">03</span>
+                <h3 class="cop-card-title">Pilotos</h3>
+                <p class="cop-node-desc">Experimentación colaborativa en aulas y entornos reales con datos seguros y
+                  Learning by Developing.</p>
+              </article>
+
+              <!-- 01 · Eje transversal central: Mentorías -->
+              <div class="cop-core-mentoring" id="cop-core-mentoring">
+                <div class="cop-core-kicker">
+                  <i data-lucide="compass" width="15" height="15"></i>
+                  <span>01 · Eje transversal continuo</span>
+                </div>
+                <h3 class="cop-core-title">Mentorías</h3>
+                <p class="cop-core-desc">Acompañamiento experto en ética, metodología STEAM y diseño humano-IA en todo el
+                  recorrido, respaldado por las 8 universidades.</p>
+              </div>
+
+              <!-- 05 · Casos de Éxito (Bottom-Left) -->
+              <article class="cop-node-card is-bl" id="cop-node-4">
+                <span class="cop-step-num">05</span>
+                <h3 class="cop-card-title">Casos de Éxito</h3>
+                <p class="cop-node-desc">Experiencias documentadas, reproducibles y abiertas para inspirar a otros
+                  centros y territorios.</p>
+              </article>
+
+              <!-- Logo AiSECRETT centrado abajo -->
+              <div class="cop-bottom-logo">
                 <div class="aisecrett-logo-plate">
-                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AiSECRETT">
                 </div>
               </div>
-            </div>
 
-            <div class="cop-architecture">
-              <!-- Tarjeta 1: Mentorías como eje transversal continuo -->
-              <button type="button" class="cop-mentoring-axis" onclick="toggleCopCard(this)" aria-expanded="false">
-                <div class="cop-card-head">
-                  <div style="display: flex; align-items: center; gap: var(--space-sm);">
-                    <i data-lucide="compass" width="20" height="20" style="color: var(--primary);"></i>
-                    <h3 class="cop-card-title" style="color: var(--on-primary-container);">Mentorías · Eje transversal continuo en todo el proceso</h3>
-                  </div>
-                  <i data-lucide="chevron-down" width="18" height="18" class="sector-chevron"></i>
-                </div>
-                <div class="cop-collapse">
-                  <div class="cop-collapse-inner">
-                    <p class="cop-collapse-text" style="color: var(--on-primary-container);">Acompañamiento experto continuo en ética, metodología STEAM, diseño humano-IA y viabilidad pedagógica desde el planteamiento del reto hasta la publicación del caso de éxito, respaldado por las 8 universidades europeas del consorcio.</p>
-                  </div>
-                </div>
-              </button>
-
-              <!-- Recorrido operativo: Retos -> Pilotos -> Validaciones -> Casos de Éxito -->
-              <div class="cop-flow-grid">
-                <button type="button" class="cop-stage-card" onclick="toggleCopCard(this)" aria-expanded="false">
-                  <span class="cop-step-num">01 · RECORRIDO</span>
-                  <div class="cop-card-head">
-                    <h3 class="cop-card-title">Retos</h3>
-                    <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
-                  </div>
-                  <div class="cop-collapse"><div class="cop-collapse-inner"><p class="cop-collapse-text">Necesidades reales planteadas por centros, administraciones, empresas o entidades sociales en los 7 sectores de AI-SECRETT.</p></div></div>
-                </button>
-
-                <button type="button" class="cop-stage-card" onclick="toggleCopCard(this)" aria-expanded="false">
-                  <span class="cop-step-num">02 · RECORRIDO</span>
-                  <div class="cop-card-head">
-                    <h3 class="cop-card-title">Pilotos</h3>
-                    <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
-                  </div>
-                  <div class="cop-collapse"><div class="cop-collapse-inner"><p class="cop-collapse-text">Experimentación colaborativa en aulas y entornos reales mediante Learning by Developing, con datos sintéticos o cumplimiento estricto RGPD.</p></div></div>
-                </button>
-
-                <button type="button" class="cop-stage-card" onclick="toggleCopCard(this)" aria-expanded="false">
-                  <span class="cop-step-num">03 · RECORRIDO</span>
-                  <div class="cop-card-head">
-                    <h3 class="cop-card-title">Validaciones</h3>
-                    <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
-                  </div>
-                  <div class="cop-collapse"><div class="cop-collapse-inner"><p class="cop-collapse-text">Contraste y evaluación participativa entre pares dentro de ConsensUE antes de su apertura pública al resto de Europa.</p></div></div>
-                </button>
-
-                <button type="button" class="cop-stage-card" onclick="toggleCopCard(this)" aria-expanded="false">
-                  <span class="cop-step-num">04 · RECORRIDO</span>
-                  <div class="cop-card-head">
-                    <h3 class="cop-card-title">Casos de Éxito</h3>
-                    <i data-lucide="chevron-down" width="16" height="16" class="sector-chevron"></i>
-                  </div>
-                  <div class="cop-collapse"><div class="cop-collapse-inner"><p class="cop-collapse-text">Experiencias documentadas, reproducibles y abiertas en el portal público para inspirar transferencia a otros centros y territorios.</p></div></div>
-                </button>
-              </div>
+              <!-- 04 · Validaciones (Bottom-Right) -->
+              <article class="cop-node-card is-br" id="cop-node-3">
+                <span class="cop-step-num">04</span>
+                <h3 class="cop-card-title">Validaciones</h3>
+                <p class="cop-node-desc">Contraste y evaluación participativa entre pares antes de su apertura pública
+                  al resto de Europa.</p>
+              </article>
             </div>
           </div>
         </section>
@@ -2260,47 +2654,68 @@
           <div class="scene-inner">
             <div class="scene-header-row">
               <div>
-                <div class="eyebrow">09 · Caso de éxito documentado · CAS-2026-001</div>
-                <h2 class="scene-title">Proyecto <em>LARA</em>: IA inclusiva desde la FP</h2>
-              </div>
-              <div style="display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; justify-content: flex-end;">
-                <span class="eyebrow">IES Severo Ochoa (Elche)</span>
-                <div class="aisecrett-logo-plate">
-                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
-                </div>
+                <div class="eyebrow">09 · Showcase real · De la idea a la vida real</div>
+                <h2 class="scene-title">Proyecto <em>LARA</em>: cuando la IA devuelve la <em>voz</em></h2>
               </div>
             </div>
 
             <div class="lara-layout">
               <article class="lara-story">
-                <div class="panel-kicker">Alianza STEAM · Tecnología + Empatía</div>
+                <div class="lara-voice-bridge" id="lara-voice-bridge">
+                  <div class="lara-wave" aria-hidden="true">
+                    <span class="lara-wave-bar" style="height: 10px;"></span>
+                    <span class="lara-wave-bar" style="height: 18px;"></span>
+                    <span class="lara-wave-bar" style="height: 22px;"></span>
+                    <span class="lara-wave-bar" style="height: 14px;"></span>
+                    <span class="lara-wave-bar" style="height: 24px;"></span>
+                    <span class="lara-wave-bar" style="height: 16px;"></span>
+                    <span class="lara-wave-bar" style="height: 20px;"></span>
+                    <span class="lara-wave-bar" style="height: 12px;"></span>
+                    <span class="lara-wave-bar" style="height: 18px;"></span>
+                    <span class="lara-wave-bar" style="height: 10px;"></span>
+                  </div>
+                  <p class="lara-voice-status" id="lara-voice-status">Voz única → Autonomía comunicativa en tiempo real</p>
+                </div>
+
+                <div class="panel-kicker">Alianza STEAM · Técnica + Empatía</div>
                 <h3 class="panel-title" style="margin: 0;">Voz accesible para trastornos del habla</h3>
-                <p class="panel-desc" style="font-size: 1rem;">Desarrollado por el Curso de Especialización en IA y Big Data del IES Severo Ochoa (Elche), LARA aplica modelos de IA entrenados sobre fonemas propios para reconocer y traducir casi en tiempo real el habla de personas con parálisis cerebral, disartria o disfasia.</p>
-                <p class="panel-desc" style="font-size: 1rem;">Encarna la esencia STEAM: ingeniería de datos y aprendizaje automático al servicio directo de la dignidad humana, co-construida con asociaciones locales y replicada por centros líderes de FP.</p>
+                <div class="helix-kpi-bar" style="margin-top: 0;" aria-label="Equipos participantes">
+                  <span class="helix-kpi-pill"><strong>IA</strong> y Big Data</span>
+                  <span class="helix-kpi-pill"><strong>Atención</strong> a la Dependencia</span>
+                  <span class="helix-kpi-pill"><strong>9</strong> ONG locales</span>
+                </div>
+                <p class="panel-desc" style="font-size: 0.98rem;">Reentrenaron el modelo <strong>Whisper</strong> con fonemas propios para traducir en tiempo real el habla de personas con parálisis cerebral, disartria o disfasia.</p>
                 <div class="contact-actions" style="margin-top: var(--space-xs);">
-                  <a class="btn btn-accent" href="https://youtu.be/oeKX7MPGhwc?si=hPY4iqYgM3VpVtjR&amp;t=6" target="_blank" rel="noopener noreferrer" onclick="return openFullWindow(event, this.href)">
+                  <a class="btn btn-accent" href="https://youtu.be/oeKX7MPGhwc?si=hPY4iqYgM3VpVtjR&amp;t=6"
+                    target="_blank" rel="noopener noreferrer" onclick="return openFullWindow(event, this.href)">
                     <i data-lucide="play-circle" width="16" height="16"></i>
                     <span>Ver vídeo real del Proyecto LARA</span>
                   </a>
                 </div>
               </article>
 
-              <div class="lara-metrics-grid">
-                <div class="lara-metric-tile">
-                  <div class="lara-metric-num">150</div>
-                  <div class="lara-metric-label">Donantes de voz</div>
+              <div class="lara-right-col">
+                <div class="lara-metrics-grid">
+                  <div class="lara-metric-tile">
+                    <div class="lara-metric-num" data-target="150">0</div>
+                    <div class="lara-metric-label">Donantes de voz</div>
+                  </div>
+                  <div class="lara-metric-tile">
+                    <div class="lara-metric-num" data-target="43000" data-format="es">0</div>
+                    <div class="lara-metric-label">Audios capturados</div>
+                  </div>
+                  <div class="lara-metric-tile">
+                    <div class="lara-metric-num" data-target="59" data-suffix=" h">0 h</div>
+                    <div class="lara-metric-label">Horas de grabación</div>
+                  </div>
+                  <div class="lara-metric-tile">
+                    <div class="lara-metric-num" data-target="9">0</div>
+                    <div class="lara-metric-label">ONG locales participantes</div>
+                  </div>
                 </div>
-                <div class="lara-metric-tile">
-                  <div class="lara-metric-num">43.000</div>
-                  <div class="lara-metric-label">Audios capturados</div>
-                </div>
-                <div class="lara-metric-tile">
-                  <div class="lara-metric-num">59 h</div>
-                  <div class="lara-metric-label">Horas de grabación</div>
-                </div>
-                <div class="lara-metric-tile">
-                  <div class="lara-metric-num">9</div>
-                  <div class="lara-metric-label">ONG locales participantes</div>
+                <div class="lara-attribution-bar">
+                  <span class="eyebrow">IES Severo Ochoa (Elche)</span>
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AiSECRETT">
                 </div>
               </div>
             </div>
@@ -2314,13 +2729,15 @@
               <div class="scene-header-row">
                 <div>
                   <div class="eyebrow">10 · Cierre e invitación abierta</div>
-                  <h2 class="scene-title">Cómo formar parte de <em>AI-STEAM Network</em></h2>
+                  <h2 class="scene-title">Cómo formar parte de <em>AiSTEAM Network</em></h2>
                 </div>
                 <div class="aisecrett-logo-plate">
                   <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
                 </div>
               </div>
-              <p class="scene-lede" style="margin-top: var(--space-xs);">La tecnología solo cobra sentido cuando teje comunidad. Súmate con un reto, un piloto o una mentoría conectada con las 8 universidades europeas del consorcio.</p>
+              <p class="scene-lede" style="margin-top: var(--space-xs);">La tecnología solo cobra sentido cuando teje
+                comunidad. Súmate con un reto, un piloto o una mentoría conectada con las 8 universidades europeas del
+                consorcio.</p>
             </div>
 
             <div class="closing-cards-grid">
@@ -2333,19 +2750,23 @@
                         <i data-lucide="globe" width="20" height="20"></i>
                         <span class="eyebrow">Portal de trabajo</span>
                       </div>
-                      <h3 class="contact-card-title">Web provisional AI-STEAM Network</h3>
+                      <h3 class="contact-card-title">Web provisional AiSTEAM Network</h3>
                     </div>
-                    <div class="contact-qr-box" data-qr="https://jsmiragregori.github.io/AI-STEAM-NETWORK/" aria-label="Código QR de https://jsmiragregori.github.io/AI-STEAM-NETWORK/"></div>
+                    <div class="contact-qr-box" data-qr="https://jsmiragregori.github.io/AI-STEAM-NETWORK/"
+                      aria-label="Código QR de https://jsmiragregori.github.io/AI-STEAM-NETWORK/"></div>
                   </div>
-                  <p class="contact-card-desc">Repositorio abierto de casos, sectores productivos y dinámicas de la Comunidad de Práctica.</p>
+                  <p class="contact-card-desc">Repositorio abierto de casos, sectores productivos y dinámicas de la
+                    Comunidad de Práctica.</p>
                   <div class="contact-address" id="addr-portal">https://jsmiragregori.github.io/AI-STEAM-NETWORK/</div>
                 </div>
                 <div class="contact-actions">
-                  <a class="btn btn-accent" href="https://jsmiragregori.github.io/AI-STEAM-NETWORK/" target="_blank" rel="noopener noreferrer">
+                  <a class="btn btn-accent" href="https://jsmiragregori.github.io/AI-STEAM-NETWORK/" target="_blank"
+                    rel="noopener noreferrer">
                     <i data-lucide="external-link" width="15" height="15"></i>
                     <span>Abrir web</span>
                   </a>
-                  <button type="button" class="btn btn-subtle" onclick="copyText('https://jsmiragregori.github.io/AI-STEAM-NETWORK/', 'fb-portal')">
+                  <button type="button" class="btn btn-subtle"
+                    onclick="copyText('https://jsmiragregori.github.io/AI-STEAM-NETWORK/', 'fb-portal')">
                     <i data-lucide="copy" width="14" height="14"></i>
                     <span>Copiar</span>
                   </button>
@@ -2362,11 +2783,13 @@
                         <i data-lucide="compass" width="20" height="20"></i>
                         <span class="eyebrow">Consorcio europeo</span>
                       </div>
-                      <h3 class="contact-card-title">Web oficial de AI-SECRETT</h3>
+                      <h3 class="contact-card-title">Web oficial de AiSECRETT</h3>
                     </div>
-                    <div class="contact-qr-box" data-qr="https://aisecrett.eu" aria-label="Código QR de aisecrett.eu"></div>
+                    <div class="contact-qr-box" data-qr="https://aisecrett.eu" aria-label="Código QR de aisecrett.eu">
+                    </div>
                   </div>
-                  <p class="contact-card-desc">Marco del proyecto europeo, formación académica (Track A) y consorcio de 23 socios en 12 países.</p>
+                  <p class="contact-card-desc">Marco del proyecto europeo, formación académica (Track A) y consorcio de
+                    23 socios en 12 países.</p>
                   <div class="contact-address" id="addr-official">https://aisecrett.eu</div>
                 </div>
                 <div class="contact-actions">
@@ -2374,7 +2797,8 @@
                     <i data-lucide="external-link" width="15" height="15"></i>
                     <span>Abrir web</span>
                   </a>
-                  <button type="button" class="btn btn-subtle" onclick="copyText('https://aisecrett.eu', 'fb-official')">
+                  <button type="button" class="btn btn-subtle"
+                    onclick="copyText('https://aisecrett.eu', 'fb-official')">
                     <i data-lucide="copy" width="14" height="14"></i>
                     <span>Copiar</span>
                   </button>
@@ -2393,9 +2817,11 @@
                       </div>
                       <h3 class="contact-card-title">Correo único de la red</h3>
                     </div>
-                    <div class="contact-qr-box" data-qr="mailto:aisteam_secrett@gva.es" aria-label="Código QR de contacto aisteam_secrett@gva.es"></div>
+                    <div class="contact-qr-box" data-qr="mailto:aisteam_secrett@gva.es"
+                      aria-label="Código QR de contacto aisteam_secrett@gva.es"></div>
                   </div>
-                  <p class="contact-card-desc">Canal directo para adhesiones, mentorías, propuestas de retos y coordinación institucional.</p>
+                  <p class="contact-card-desc">Canal directo para adhesiones, mentorías, propuestas de retos y
+                    coordinación institucional.</p>
                   <div class="contact-address">aisteam_secrett@gva.es</div>
                 </div>
                 <div class="contact-actions">
@@ -2451,11 +2877,14 @@
     // Scene 6 state: 0 = hidden, 1 = central hub, 2..5 = nodes 1..4
     let helixStep = 0;
 
-    // Scene 7 state: 0 = all closed, 1..7 = active sector card open
+    // Scene 7 state: 0 = all closed, 1 = Servicios No Turísticos open
     let sectorStep = 0;
 
-    // Scene 8 state: 0 = all closed, 1..5 = active CoP card open
+    // Scene 8 state: 0 = hidden, 1 = Mentorías + spokes, 2..5 = stages 1..4
     let copStep = 0;
+
+    // Scene 9 state: 0 = story + voice wave, 1 = metrics count-up & resolved bridge
+    let laraStep = 0;
 
     // Canvas state for Scene 5 (3 elegant artist brushes + live auto-paint)
     const canvasStrokes = [];
@@ -2554,12 +2983,16 @@
         setHelixStep(helixStep + 1);
         return;
       }
-      if (currentScene === 6 && sectorStep < 7) {
-        setSectorStep(sectorStep + 1);
+      if (currentScene === 6 && sectorStep < 1) {
+        setSectorStep(1);
         return;
       }
       if (currentScene === 7 && copStep < 5) {
         setCopStep(copStep + 1);
+        return;
+      }
+      if (currentScene === 8 && laraStep < 1) {
+        setLaraStep(1);
         return;
       }
       if (currentScene < totalScenes - 1) {
@@ -2590,11 +3023,15 @@
         return;
       }
       if (currentScene === 6 && sectorStep > 0) {
-        setSectorStep(sectorStep - 1);
+        setSectorStep(0);
         return;
       }
       if (currentScene === 7 && copStep > 0) {
         setCopStep(copStep - 1);
+        return;
+      }
+      if (currentScene === 8 && laraStep > 0) {
+        setLaraStep(0);
         return;
       }
       if (currentScene > 0) {
@@ -3127,7 +3564,7 @@
         if (e.button !== 0 && e.pointerType === 'mouse') return;
         const rect = canvas.getBoundingClientRect();
         if (canvas.setPointerCapture) {
-          try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
+          try { canvas.setPointerCapture(e.pointerId); } catch (_) { }
         }
         startBrushStroke(e.clientX - rect.left, e.clientY - rect.top);
       });
@@ -3148,12 +3585,12 @@
       });
     }
 
-    // Scene 7: Sector cards toggle & arrow-driven cumulative reveal
+    // Scene 7: Sector cards toggle & 1-click arrow reveal for Servicios No Turísticos
     function setSectorStep(step) {
       const cards = document.querySelectorAll('#sectors-grid .sector-card');
-      sectorStep = Math.max(0, Math.min(cards.length, step));
+      sectorStep = step ? 1 : 0;
       cards.forEach((card, idx) => {
-        const isOpen = idx < sectorStep;
+        const isOpen = sectorStep === 1 && idx === cards.length - 1;
         card.classList.toggle('is-open', isOpen);
         card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
@@ -3165,21 +3602,60 @@
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
 
-    // Scene 8: CoP cards toggle & arrow-driven cumulative reveal
+    // Scene 8: Circular CoP path & transversal mentoring (0 -> Mentorías -> Retos -> Pilotos -> Validaciones -> Casos)
     function setCopStep(step) {
-      const cards = document.querySelectorAll('#scene-8 .cop-architecture button');
-      copStep = Math.max(0, Math.min(cards.length, step));
-      cards.forEach((card, idx) => {
-        const isOpen = idx < copStep;
-        card.classList.toggle('is-open', isOpen);
-        card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
+      copStep = Math.max(0, Math.min(5, step));
+      const core = document.getElementById('cop-core-mentoring');
+      const spokes = document.getElementById('cop-spokes');
+      if (core) core.classList.toggle('is-revealed', copStep >= 1);
+      if (spokes) spokes.classList.toggle('is-revealed', copStep >= 1);
+
+      for (let i = 1; i <= 4; i++) {
+        const node = document.getElementById(`cop-node-${i}`);
+        const arc = document.getElementById(`cop-arc-${i}`);
+        const revealed = copStep >= i + 1;
+        if (node) node.classList.toggle('is-revealed', revealed);
+        if (arc) arc.classList.toggle('is-revealed', revealed);
+      }
     }
 
-    function toggleCopCard(btn) {
-      if (!btn) return;
-      const isOpen = btn.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    // Scene 9: Proyecto LARA voice bridge & animated metric count-up
+    function setLaraStep(step) {
+      laraStep = step ? 1 : 0;
+      const bridge = document.getElementById('lara-voice-bridge');
+      const tiles = document.querySelectorAll('#scene-9 .lara-metric-tile');
+      const nums = document.querySelectorAll('#scene-9 .lara-metric-num[data-target]');
+
+      if (bridge) bridge.classList.toggle('is-resolved', laraStep === 1);
+      tiles.forEach((tile, idx) => {
+        tile.style.transitionDelay = laraStep === 1 ? `${idx * 90}ms` : '0ms';
+        tile.classList.toggle('is-revealed', laraStep === 1);
+      });
+
+      if (laraStep === 0) {
+        nums.forEach((el) => {
+          const suffix = el.getAttribute('data-suffix') || '';
+          el.textContent = `0${suffix}`;
+        });
+        return;
+      }
+
+      const start = performance.now();
+      const duration = 850;
+      function animateCount(now) {
+        if (laraStep !== 1) return;
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        nums.forEach((el) => {
+          const target = Number(el.getAttribute('data-target') || 0);
+          const suffix = el.getAttribute('data-suffix') || '';
+          const fmt = el.getAttribute('data-format');
+          const val = Math.round(target * eased);
+          el.textContent = `${fmt === 'es' ? val.toLocaleString('es-ES') : val}${suffix}`;
+        });
+        if (t < 1) requestAnimationFrame(animateCount);
+      }
+      requestAnimationFrame(animateCount);
     }
 
     function openFullWindow(event, url) {
@@ -3244,4 +3720,5 @@
     });
   </script>
 </body>
+
 </html>
