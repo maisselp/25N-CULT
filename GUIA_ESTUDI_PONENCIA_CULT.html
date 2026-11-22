@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia d'estudi · Ponència CUL.T (25 NOV)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF6ED;
+      --surface: #FFFDF8;
+      --surface-low: #F4EFE3;
+      --ink: #1E1B4B;
+      --ink-muted: #46426E;
+      --primary: #5620F6;
+      --primary-soft: #EDE8FE;
+      --primary-ink: #2D0F8E;
+      --gold: #A68452;
+      --border: #D5CCB8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(250, 246, 237, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .timer-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.75rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 140ms ease;
+    }
+
+    button:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    button.is-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FAF6ED;
+    }
+
+    button.is-primary:hover {
+      background: var(--primary-ink);
+      color: #FAF6ED;
+    }
+
+    button.is-tab.is-active {
+      background: var(--primary-soft);
+      border-color: var(--primary);
+      color: var(--primary-ink);
+    }
+
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.is-active {
+      display: block;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 2.5px solid var(--gold);
+      border-radius: 0.5rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .scene-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.9rem;
+      break-inside: avoid;
+    }
+
+    .scene-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.45rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .scene-head h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .scene-head h2 em {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .meta-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      padding: 0.12rem 0.45rem;
+      border-radius: 0.25rem;
+      margin-right: 0.3rem;
+      vertical-align: middle;
+    }
+
+    .tag-click {
+      background: var(--primary);
+      color: #FAF6ED;
+    }
+
+    .tag-screen {
+      background: var(--primary-soft);
+      color: var(--primary-ink);
+      border: 1px solid var(--primary);
+    }
+
+    .tag-pause {
+      background: var(--surface-low);
+      color: var(--ink-muted);
+      border: 1px solid var(--border);
+    }
+
+    .bridge {
+      margin-top: 0.65rem;
+      padding: 0.55rem 0.75rem;
+      border-left: 3px solid var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary-ink);
+      font-size: 0.94rem;
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+
+    .cheat-grid {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .cheat-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.4rem;
+      padding: 0.55rem 0.8rem;
+      align-items: start;
+      break-inside: avoid;
+    }
+
+    .cheat-scene {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--primary-ink);
+    }
+
+    .cheat-scene small {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--ink-muted);
+      font-weight: 400;
+    }
+
+    .cheat-body {
+      font-size: 0.88rem;
+    }
+
+    .cheat-bridge {
+      margin-top: 0.25rem;
+      color: var(--primary-ink);
+      font-style: italic;
+    }
+
+    p { margin: 0.45rem 0; }
+
+    @media (max-width: 640px) {
+      .cheat-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+
+    @media print {
+      body { background: #FFFFFF; }
+      .topbar { display: none !important; }
+      main { max-width: 100%; padding: 0; }
+      .panel { display: block !important; }
+      .page-break { page-break-before: always; }
+      .scene-card, .cheat-row, .card {
+        border-color: #BBBBBB;
+        background: #FFFFFF;
+      }
+      .bridge {
+        background: #F4F1FF;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="eyebrow">Guia d'estudi · 25 NOV · CUL.T</span>
+      <h1>AiSTEAM Network · Ponència María José Lozano</h1>
+    </div>
+
+    <div class="controls">
+      <button type="button" class="is-tab is-active" onclick="showTab('cheat', this)">Xuleter 1 pàgina</button>
+      <button type="button" class="is-tab" onclick="showTab('full', this)">Guió complet</button>
+      <button type="button" class="is-tab" onclick="showTab('plan', this)">Pla 3 dies</button>
+
+      <div class="timer-box" title="Cronòmetre d'assaig">
+        <span id="timer-display">00:00</span>
+        <button type="button" onclick="toggleTimer()" id="timer-btn" style="padding: 0.15rem 0.55rem;">Iniciar</button>
+        <button type="button" onclick="resetTimer()" style="padding: 0.15rem 0.55rem;">0</button>
+      </div>
+
+      <button type="button" class="is-primary" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PESTAÑA 1: XULETER D'UNA PÀGINA -->
+    <section id="tab-cheat" class="panel is-active">
+      <div class="card">
+        <span class="eyebrow">Vista ràpida per a faristol o mòbil · ~8 minuts totals (amb vídeo d'1m30s)</span>
+        <p style="margin-bottom: 0;">Només has de recordar la <strong>idea clau</strong>, els <strong>clics</strong> i el <strong>pont</strong>. Tot el que porta <span class="tag tag-screen">PANTALLA</span> ho lliges directe de la diapositiva.</p>
+      </div>
+
+      <div class="cheat-grid">
+        <div class="cheat-row">
+          <div class="cheat-scene">1 · Portada<small>Directe (~45 s)</small></div>
+          <div class="cheat-body">
+            Imaginad a <strong>Lara</strong> (entra amb son pare) → <em>¿Algoritmos o personas?</em> (pausa 2s) → Qui soc (30 anys, CEFIRE IA) → Gràcies <strong>CUL.T</strong>.
+            <div class="cheat-bridge">Pont → «…cómo convertimos esa pregunta en acción real… y cómo vosotros podéis formar parte de ella.»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">2 · Ada Byron<small>3 clics → (~45 s)</small></div>
+          <div class="cheat-body">
+            1828, ales de paper → <span class="tag tag-click">Clic 1</span> Ada Byron → <span class="tag tag-click">Clic 2</span> Mare rigor / Pare poesia → <em>«¿Me darás ciencia poética?»</em> → <span class="tag tag-click">Clic 3</span> Primera programadora + <strong>referents femenins reals</strong>.
+            <div class="cheat-bridge">Pont → «Y esa ciencia poética cobró vida cuando Ada conoció a Charles Babbage.»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">3 · Babbage i Ada<small>3 clics → (~40 s)</small></div>
+          <div class="cheat-body">
+            <span class="tag tag-click">Clic 1</span> Babbage (només números) → <span class="tag tag-click">Clic 2</span> Ada + Teler Jacquard (símbols, música, cultura) → <span class="tag tag-click">Clic 3</span> <span class="tag tag-screen">PANTALLA</span> Llegir cita.
+            <div class="cheat-bridge">Pont → «Y hoy, en educación, ese equilibrio tiene un nombre: pasar de STEM a STEAM.»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">4 · STEM → STEAM<small>1 clic → (~40 s)</small></div>
+          <div class="cheat-body">
+            STEM = el <em>cómo</em> → <span class="tag tag-click">Clic 1</span> La <strong>A</strong> dirigeix (<em>para quién</em> i <em>por qué</em>) → <span class="tag tag-screen">PANTALLA</span> Llegir les 4 píndoles: <strong>Creatividad, Pensamiento crítico, Colaboración, Ética</strong>.
+            <div class="cheat-bridge">Pont → «Porque, en realidad, la herramienta por sí sola no crea nada…»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">5 · El pinzell<small>1 traç (~35 s)</small></div>
+          <div class="cheat-body">
+            La IA és el <strong>pincel</strong>, la persona guia el <strong>trazo</strong>. Llenç en blanc (<em>no tenerle miedo</em>) → <strong>Dibuixes 1 traç</strong> → La mirada humana decidix propòsit, autoría i ètica.
+            <div class="cheat-bridge">Pont → «Y precisamente para llevar esa mirada humana de las aulas a la sociedad, nace nuestra aportación al proyecto…»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">6 · AiSTEAM Network<small>Vista única (~40 s)</small></div>
+          <div class="cheat-body">
+            <strong>AiSTEAM Network</strong> (Conselleria · AiSECRETT). <span class="tag tag-screen">PANTALLA</span> <strong>23 socios, 12 países, 8 universidades</strong> + <strong>Cuádruple hélice</strong> (educació, empresa, societat, administració). Objectiu: necessitat real → solució humana.
+            <div class="cheat-bridge">Pont → «¿Y dónde aterriza esa conexión entre el talento educativo y la calle?»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">7 · 7 sectors<small>2 clics → (~35 s)</small></div>
+          <div class="cheat-body">
+            7 sectors, en destaquem 2: <span class="tag tag-click">Clic 1</span> <strong>CCIs (CUL.T)</strong> sense perdre autoría → <span class="tag tag-click">Clic 2</span> <strong>Servicios No Turísticos</strong> (la millor tecnologia logra que <strong>ninguna persona se sienta excluida</strong>).
+            <div class="cheat-bridge">Pont → «Y para hacer posible que esto no se quede en casos aislados, necesitamos tejer red…»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">8 · CoP<small>Vista única (~35 s)</small></div>
+          <div class="cheat-body">
+            Comunidad de Práctica (CoP). <span class="tag tag-screen">PANTALLA</span> 5 opcions en sentit horari: <strong>01 Mentorías → 02 Retos → 03 Pilotos → 04 Validaciones → 05 Casos de Éxito</strong>.
+            <div class="cheat-bridge">Pont → «¿Y queréis ver qué pasa cuando todo este engranaje se pone en marcha? Mirad qué ocurrió con Lara…»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">9 · Proyecto LARA<small>Vídeo 1m30s</small></div>
+          <div class="cheat-body">
+            Recordar Lara → <span class="tag tag-screen">PANTALLA</span> <strong>IES Severo Ochoa (Elx)</strong>, IA + Dependència, <strong>9 ONG</strong>, <strong>150 donants</strong>, <strong>43.000 àudios</strong> → <strong>VÍDEO (1m30s)</strong> → <em>«Esto es lo que pasa cuando ponemos la IA al servicio de las personas.»</em>
+            <div class="cheat-bridge">Pont → «Eso es la AiSTEAM Network. Y hoy podéis formar parte de ella.»</div>
+          </div>
+        </div>
+
+        <div class="cheat-row">
+          <div class="cheat-scene">10 · Tancament<small>Vista única (~30 s)</small></div>
+          <div class="cheat-body">
+            Invitar a escanejar els <strong>3 QR</strong> → Callback: <em>«¿Algoritmos o personas? Aquí tenéis la respuesta:»</em> → <span class="tag tag-screen">PANTALLA</span> Cita final → <em>«Muchas gracias.»</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PESTAÑA 2: GUIÓ COMPLET -->
+    <section id="tab-full" class="panel page-break">
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 1 · <em>Portada</em></h2>
+          <span class="meta-time">~45 s</span>
+        </div>
+        <p>Buenos días. Esta mañana quiero pediros que uséis vuestra imaginación. Imaginad a una chica de instituto. Se llama <strong>Lara</strong>, y cada mañana entra a clase acompañada de su padre porque solo él la entiende cuando habla.</p>
+        <p>Y ahora os pregunto: Cuando pensáis en Inteligencia Artificial… <strong>¿estáis pensando en algoritmos, o en personas?</strong> <span class="tag tag-pause">PAUSA 2s</span></p>
+        <p>Soy María José Lozano, ingeniera informática; tras <strong>30 años en las aulas</strong> con alumnado como Lara, hoy formo al profesorado en el <strong>CEFIRE de IA y Pensamiento Computacional</strong>.</p>
+        <div class="bridge">Gracias a la organización y a CUL.T por invitarnos a contaros cómo convertimos esa pregunta —¿algoritmos o personas?— en acción real… y cómo vosotros podéis formar parte de ella.</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 2 · <em>Ada Byron y la Ciencia Poética</em></h2>
+          <span class="meta-time">~45 s · 3 clics</span>
+        </div>
+        <p>Para entender hacia dónde vamos, miremos a una niña de doce años que, en 1828, escribió a su madre diseñando una máquina voladora a vapor: <em>«Mañana voy a empezar mis alas de papel»</em>.</p>
+        <p><span class="tag tag-click">CLIC 1 · →</span> Era <strong>Ada Byron</strong>.</p>
+        <p><span class="tag tag-click">CLIC 2 · →</span> Su madre intentó educarla solo en el <strong>rigor matemático</strong>, para alejarla de la <strong>poesía</strong> y la locura de su padre, Lord Byron. Pero Ada se negó a elegir entre el cálculo y la imaginación, y le suplicó: <strong>«¿Me darás ciencia poética?»</strong> <span class="tag tag-pause">PAUSA 1s</span></p>
+        <p><span class="tag tag-click">CLIC 3 · →</span> ¿Por qué la traigo hoy aquí? Porque fue la primera programadora de la historia, y porque nuestras alumnas necesitan <strong>referentes femeninos reales</strong>, ya que el talento y la creatividad no entienden de género. <span class="tag tag-pause">PAUSA 2s</span></p>
+        <div class="bridge">Y esa ciencia poética cobró vida cuando Ada conoció a Charles Babbage.</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 3 · <em>Babbage y la visión de Ada</em></h2>
+          <span class="meta-time">~40 s · 3 clics</span>
+        </div>
+        <p><span class="tag tag-click">CLIC 1 · →</span> Él diseñó la <strong>Máquina Analítica</strong> como una calculadora gigante: <strong>solo veía números</strong>.</p>
+        <p><span class="tag tag-click">CLIC 2 · →</span> Pero Ada miró el <strong>telar de Jacquard</strong> y vio el futuro: que, si manipulaban símbolos, las máquinas algún día tejerían música, lenguaje y cultura.</p>
+        <p><span class="tag tag-click">CLIC 3 · →</span> <span class="tag tag-pause">PAUSA 1s assenyalant la cita</span> Y formuló la clave de todo lo que hacemos hoy: <span class="tag tag-screen">PANTALLA</span> <em>«La máquina genera la respuesta técnica; la persona sostiene la intención, el propósito y el sentido.»</em> <span class="tag tag-pause">PAUSA 2s</span></p>
+        <div class="bridge">Y hoy, en educación, ese equilibrio tiene un nombre: pasar de STEM a STEAM.</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 4 · <em>De STEM a STEAM</em></h2>
+          <span class="meta-time">~40 s · 1 clic</span>
+        </div>
+        <p><strong>STEM</strong> —ciencia, tecnología, ingeniería y matemáticas— nos da la base técnica, el <strong>cómo</strong> funcionan las cosas.</p>
+        <p><span class="tag tag-click">CLIC · →</span> Pero al sumar la <strong>A</strong> de Artes y Humanidades, esa "A" no decora: <strong>dirige</strong>. Es la que nos hace preguntarnos el <strong>para quién</strong> y el <strong>por qué</strong>.</p>
+        <p><span class="tag tag-screen">PANTALLA</span> Y eso se traduce en cuatro competencias clave para convivir con la tecnología: <strong>creatividad, pensamiento crítico, colaboración y ética</strong>.</p>
+        <div class="bridge">Porque, en realidad, la herramienta por sí sola no crea nada…</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 5 · <em>La IA es el pincel</em></h2>
+          <span class="meta-time">~35 s · dibuixar 1 traç</span>
+        </div>
+        <p><span class="tag tag-screen">PANTALLA</span> La Inteligencia Artificial es el <strong>pincel</strong>, pero la persona guía el <strong>trazo</strong>.</p>
+        <p>El lienzo empieza en blanco, y <strong>no hay que tenerle miedo</strong>: la IA nos ayuda a dar ese primer impulso… <em>(fas un traç al llenç)</em> …pero solo la mirada humana decide el propósito, aporta la autoría y valida si el resultado tiene sentido y es ético.</p>
+        <div class="bridge">Y precisamente para llevar esa mirada humana de las aulas a la sociedad, nace nuestra aportación al proyecto…</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 6 · <em>AiSTEAM Network</em></h2>
+          <span class="meta-time">~40 s · vista única</span>
+        </div>
+        <p><span class="tag tag-screen">PANTALLA</span> <strong>AiSTEAM Network</strong>, impulsada por la Conselleria d'Educació, Cultura i Universitats, dentro de la iniciativa europea <strong>AiSECRETT</strong>.</p>
+        <p><span class="tag tag-screen">PANTALLA</span> Somos una red de <strong>23 socios en 12 países, con 8 universidades europeas</strong>.</p>
+        <p><span class="tag tag-screen">PANTALLA</span> Trabajamos en <strong>cuádruple hélice</strong>, conectando cuatro mundos que casi nunca se sientan en la misma mesa: educación superior —FP y universidad—, empresa, sociedad civil y ONG, y administración pública.</p>
+        <p>¿El objetivo? Que una necesidad real se convierta en una solución humana con Inteligencia Artificial.</p>
+        <div class="bridge">¿Y dónde aterriza esa conexión entre el talento educativo y la calle?</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 7 · <em>Los 7 sectores productivos</em></h2>
+          <span class="meta-time">~35 s · 2 clics</span>
+        </div>
+        <p>En siete sectores productivos que van desde manufactura, movilidad o energía hasta agroalimentación y vivienda. Pero hoy quiero destacaros especialmente dos…</p>
+        <p><span class="tag tag-click">CLIC 1 · → CCIs</span> El primero son las <strong>Industrias Culturales y Creativas</strong>, el corazón de un encuentro como <strong>CUL.T</strong>: diseño, patrimonio, audiovisual o artes escénicas donde la IA acompaña sin perder la autoría ni el criterio humano.</p>
+        <p><span class="tag tag-click">CLIC 2 · → Servicios No Turísticos</span> Y el segundo son los <strong>Servicios No Turísticos</strong>: educación, cuidados sociosanitarios e inclusión, donde la IA entra de lleno en la vida cotidiana de la gente. Porque la mejor tecnología no es la más compleja; <strong>es la que logra que ninguna persona se sienta excluida</strong>.</p>
+        <div class="bridge">Y para hacer posible que esto no se quede en casos aislados, necesitamos tejer red…</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 8 · <em>La Comunidad de Práctica (CoP)</em></h2>
+          <span class="meta-time">~35 s · vista única</span>
+        </div>
+        <p>¿Cómo articulamos todo esto para que cualquier centro, empresa o entidad pueda participar? A través de nuestra <strong>Comunidad de Práctica</strong>, la <strong>CoP</strong> de AiSTEAM Network.</p>
+        <p><span class="tag tag-screen">PANTALLA</span> Tenéis cinco formas de colaborar, con las <strong>mentorías</strong> en el centro y un ciclo abierto que va desde plantear <strong>retos</strong> reales y probar <strong>pilotos</strong> en el aula, hasta <strong>validarlos</strong> entre pares y convertirlos en <strong>casos de éxito</strong> compartidos con toda Europa.</p>
+        <div class="bridge">¿Y queréis ver qué pasa cuando todo este engranaje se pone en marcha? Mirad qué ocurrió con Lara…</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 9 · <em>Proyecto LARA</em></h2>
+          <span class="meta-time">~30 s + 1m30s vídeo + 10 s</span>
+        </div>
+        <p>¿Recordáis a <strong>Lara</strong>, la chica del principio que entraba a clase con su padre porque solo él la entendía?</p>
+        <p><span class="tag tag-screen">PANTALLA</span> En el <strong>IES Severo Ochoa de Elche</strong>, alumnado de <strong>IA y Big Data</strong> se unió con el ciclo de <strong>Atención a la Dependencia</strong> y <strong>9 ONG locales</strong>. Con <strong>150 donantes de voz</strong> y <strong>43.000 audios</strong>, reentrenaron un modelo de IA para traducir en tiempo real el habla de personas con parálisis cerebral o disartria.</p>
+        <p>Pero mejor que contároslo yo… vedlo con vuestros propios ojos. <span class="tag tag-click">VÍDEO LARA · 1m30s</span></p>
+        <p><span class="tag tag-pause">PAUSA 1s</span> <strong>Esto</strong> es lo que pasa cuando ponemos la IA al servicio de las personas.</p>
+        <div class="bridge">Eso es la AiSTEAM Network. Y hoy podéis formar parte de ella.</div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-head">
+          <h2>Escena 10 · <em>Cierre y QR</em></h2>
+          <span class="meta-time">~30 s · vista única</span>
+        </div>
+        <p>Si representáis a un centro educativo, a una empresa, a una entidad social o a la administración, os invito a escanear cualquiera de estos códigos: podéis entrar en la web de la red, consultar el proyecto europeo o escribirnos directamente para proponer un reto, un piloto o una mentoría.</p>
+        <p><span class="tag tag-pause">PAUSA 1s</span> Cuando empezamos os pregunté si, al pensar en Inteligencia Artificial, pensabais en algoritmos o en personas.</p>
+        <p><strong>Aquí tenéis la respuesta:</strong> <span class="tag tag-screen">PANTALLA</span> <em>«La IA multiplicará nuestra capacidad de cálculo, pero el sentido humano, el propósito y la voz <strong>siempre serán nuestros</strong>.»</em></p>
+        <p><strong>Muchas gracias.</strong></p>
+      </div>
+    </section>
+
+    <!-- PESTAÑA 3: PLA 3 DIES -->
+    <section id="tab-plan" class="panel">
+      <div class="card">
+        <span class="eyebrow">Estratègia per a memoritzar sense estrès</span>
+        <h2 style="margin: 0.25rem 0 0.75rem;">Pla d'assaig en 3 dies</h2>
+        <p><strong>Dia 1 (Hui · Estructura i clics):</strong> Llig 2 vegades el <em>Xuleter 1 pàgina</em>. Fes 1 passada ràpida només dient en veu alta les <strong>frases pont</strong> mentre prems <code>→</code> a la presentació.</p>
+        <p><strong>Dia 2 (Demà · Veu alta amb cronòmetre):</strong> Usa el cronòmetre d'aquesta pàgina (sense vídeo hauries de tardar entre <strong>6:00 i 6:45</strong>). Mira la pantalla cada vegada que aparega l'etiqueta <span class="tag tag-screen">PANTALLA</span> perquè el teu cervell aprenga a no memoritzar dades.</p>
+        <p><strong>Dia 3 (Dimarts / abans d'eixir · Assaig sense paper):</strong> Fes 1 passada mirant només la presentació. Si alguna frase ix amb unes altres paraules però mantens la idea i el pont, perfecte: sonarà autèntic i natural.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showTab(name, btn) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('is-active'));
+      document.querySelectorAll('.is-tab').forEach(b => b.classList.remove('is-active'));
+      document.getElementById('tab-' + name).classList.add('is-active');
+      btn.classList.add('is-active');
+    }
+
+    let timerId = null;
+    let seconds = 0;
+
+    function updateTimerDisplay() {
+      const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const s = String(seconds % 60).padStart(2, '0');
+      document.getElementById('timer-display').textContent = m + ':' + s;
+    }
+
+    function toggleTimer() {
+      const btn = document.getElementById('timer-btn');
+      if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+        btn.textContent = 'Seguir';
+      } else {
+        timerId = setInterval(() => {
+          seconds++;
+          updateTimerDisplay();
+        }, 1000);
+        btn.textContent = 'Pausa';
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerId);
+      timerId = null;
+      seconds = 0;
+      updateTimerDisplay();
+      document.getElementById('timer-btn').textContent = 'Iniciar';
+    }
+  </script>
+</body>
+</html>

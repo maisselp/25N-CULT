@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="artifact-type" content="narrative">
   <meta name="design-style" content="atelier">
-  <title>Mujeres, IA, STEAM y competencias STEAM · AiSTEAM Network</title>
+  <title>AiSTEAM Network: mujeres, inteligencia artificial y competencias STEAM</title>
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet">
@@ -472,25 +472,26 @@
     }
 
     .cover-brand-bar {
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+      gap: var(--space-2xl);
       align-items: center;
-      justify-content: space-between;
-      gap: var(--space-lg);
-      flex-wrap: wrap;
     }
 
     .cover-logo-hero {
       display: block;
-      height: 48px;
+      height: 46px;
       width: auto;
       object-fit: contain;
+      justify-self: center;
     }
 
     .cover-logo-conselleria {
       display: block;
-      height: 82px;
+      height: 70px;
       width: auto;
       object-fit: contain;
+      justify-self: start;
     }
 
     #scene-1 .scene-inner {
@@ -865,9 +866,9 @@
       background-color: var(--surface-elevated);
       border: var(--rule-stone);
       border-radius: var(--rounded-lg);
-      padding: var(--space-xl);
+      padding: var(--space-lg) var(--space-xl);
       display: grid;
-      gap: var(--space-xl);
+      gap: var(--space-lg);
     }
 
     .acronym-row {
@@ -976,6 +977,67 @@
     .steam-stage.is-steam .meaning-box.is-arts {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .steam-competencies-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      padding-top: var(--space-md);
+      border-top: var(--rule-stone);
+    }
+
+    .steam-comp-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      border: 1px solid var(--outline-variant);
+      border-top: 2px solid var(--thread-gold);
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      letter-spacing: var(--label-tracking);
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(10px) scale(0.95);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    }
+
+    .steam-comp-pill::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: var(--rounded-full);
+      background-color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .steam-stage.is-steam .steam-comp-pill {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      border-color: var(--primary);
+    }
+
+    .steam-stage.is-steam .steam-comp-pill:nth-child(1) {
+      transition-delay: 140ms;
+    }
+
+    .steam-stage.is-steam .steam-comp-pill:nth-child(2) {
+      transition-delay: 240ms;
+    }
+
+    .steam-stage.is-steam .steam-comp-pill:nth-child(3) {
+      transition-delay: 340ms;
+    }
+
+    .steam-stage.is-steam .steam-comp-pill:nth-child(4) {
+      transition-delay: 440ms;
     }
 
     .meaning-kicker {
@@ -1922,16 +1984,140 @@
     }
 
     .contact-qr-box {
-      width: 84px;
-      height: 84px;
+      width: 104px;
+      height: 104px;
       flex-shrink: 0;
-      padding: 4px;
+      padding: 5px;
       background-color: var(--surface-elevated);
       border: var(--rule-stone);
       border-radius: var(--rounded);
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    #scene-10 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing-loom-backdrop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.42;
+    }
+
+    .closing-loom-thread {
+      fill: none;
+      stroke-dasharray: 12 8;
+      animation: closing-thread-drift 18s linear infinite;
+    }
+
+    @keyframes closing-thread-drift {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -200; }
+    }
+
+    #scene-10 .scene-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    #scene-10 .contact-card {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    #scene-10.is-active .contact-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #scene-10.is-active .contact-card:nth-child(2) { transition-delay: 110ms; }
+    #scene-10.is-active .contact-card:nth-child(3) { transition-delay: 220ms; }
+
+    #scene-10 .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(86, 32, 246, 0.10);
+    }
+
+    #scene-10 .contact-card:hover .contact-qr-box {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px var(--primary-container);
+    }
+
+    #scene-10.is-finale .contact-card {
+      opacity: 0.58;
+      transform: scale(0.98);
+      transition-delay: 0ms;
+    }
+
+    .closing-finale-quote {
+      border-left: 3.5px solid var(--thread-gold);
+      border-top: var(--rule-stone);
+      border-right: var(--rule-stone);
+      border-bottom: var(--rule-stone);
+      background: linear-gradient(135deg, var(--primary-container) 0%, var(--surface-elevated) 100%);
+      padding: var(--space-lg) var(--space-xl);
+      border-radius: 0 var(--rounded-lg) var(--rounded-lg) 0;
+      display: grid;
+      gap: var(--space-md);
+      margin: 0;
+      opacity: 0;
+      transform: translateY(14px) scale(0.98);
+      box-shadow: 0 16px 38px rgba(86, 32, 246, 0.14);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+    }
+
+    .closing-finale-quote.is-revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .closing-finale-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.65rem);
+      line-height: 1.28;
+      color: var(--on-primary-container);
+      margin: 0;
+    }
+
+    .closing-finale-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      padding-top: var(--space-sm);
+      border-top: var(--rule-stone);
+    }
+
+    .closing-finale-meta {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      letter-spacing: var(--label-tracking);
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .closing-finale-sign {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .closing-finale-sign img {
+      display: block;
+      height: 26px;
+      width: auto;
+      object-fit: contain;
     }
 
     .contact-qr-box svg {
@@ -2092,10 +2278,10 @@
         <section class="scene is-active" id="scene-1" aria-hidden="false">
           <div class="scene-inner">
             <div class="cover-brand-bar">
-              <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT" class="cover-logo-hero">
-              <img src="logo-conselleria.png"
+              <img src="generalitat-oficial.svg"
                 alt="Conselleria d'Educació, Cultura i Universitats · Generalitat Valenciana"
                 class="cover-logo-conselleria">
+              <img src="logo-aisecrett.png" alt="Logotipo oficial de AiSECRETT" class="cover-logo-hero">
             </div>
             <div class="cover-layout">
               <div style="display: grid; gap: var(--space-xl);">
@@ -2104,7 +2290,7 @@
                 </div>
 
                 <h1 class="hero-title">
-                  <em>Mujeres</em>, IA, STEAM y competencias <em>STEAM</em>. La red <em>AiSTEAM Network</em>
+                  <em>AiSTEAM Network</em>: mujeres, <em>inteligencia artificial</em> y competencias STEAM
                 </h1>
 
                 <div class="cover-speaker">
@@ -2309,6 +2495,13 @@
                   <p class="meaning-point"><strong>El <em>«por qué»</em> (Juicio crítico):</strong> validar el sentido
                     ético y social del resultado.</p>
                 </div>
+              </div>
+
+              <div class="steam-competencies-bar" aria-label="Competencias STEAM">
+                <span class="steam-comp-pill">Creatividad</span>
+                <span class="steam-comp-pill">Pensamiento crítico</span>
+                <span class="steam-comp-pill">Colaboración</span>
+                <span class="steam-comp-pill">Ética</span>
               </div>
             </div>
           </div>
@@ -2724,6 +2917,10 @@
 
         <!-- ESCENA 10: CIERRE Y CÓMO FORMAR PARTE -->
         <section class="scene" id="scene-10" aria-hidden="true">
+          <svg class="closing-loom-backdrop" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
+            <path class="closing-loom-thread" d="M 0,540 C 320,420 580,650 900,510 C 1050,445 1140,480 1200,460" stroke="var(--thread-gold)" stroke-width="1.3"/>
+            <path class="closing-loom-thread" d="M 0,580 C 360,660 640,430 960,555 C 1080,600 1150,530 1200,520" stroke="var(--primary)" stroke-width="1.1" style="animation-direction: reverse; animation-duration: 24s;"/>
+          </svg>
           <div class="scene-inner">
             <div>
               <div class="scene-header-row">
@@ -2731,17 +2928,12 @@
                   <div class="eyebrow">10 · Cierre e invitación abierta</div>
                   <h2 class="scene-title">Cómo formar parte de <em>AiSTEAM Network</em></h2>
                 </div>
-                <div class="aisecrett-logo-plate">
-                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AI-SECRETT">
-                </div>
               </div>
-              <p class="scene-lede" style="margin-top: var(--space-xs);">La tecnología solo cobra sentido cuando teje
-                comunidad. Súmate con un reto, un piloto o una mentoría conectada con las 8 universidades europeas del
-                consorcio.</p>
+              <p class="scene-lede" style="margin-top: var(--space-xs);">Escanea un código para sumarte con un reto, un piloto o una mentoría junto a las 8 universidades europeas.</p>
             </div>
 
             <div class="closing-cards-grid">
-              <!-- Tarjeta 1: Portal AI-STEAM Network -->
+              <!-- Tarjeta 1: Portal AiSTEAM Network -->
               <article class="contact-card">
                 <div style="display: grid; gap: var(--space-sm);">
                   <div class="contact-qr-row">
@@ -2755,9 +2947,7 @@
                     <div class="contact-qr-box" data-qr="https://jsmiragregori.github.io/AI-STEAM-NETWORK/"
                       aria-label="Código QR de https://jsmiragregori.github.io/AI-STEAM-NETWORK/"></div>
                   </div>
-                  <p class="contact-card-desc">Repositorio abierto de casos, sectores productivos y dinámicas de la
-                    Comunidad de Práctica.</p>
-                  <div class="contact-address" id="addr-portal">https://jsmiragregori.github.io/AI-STEAM-NETWORK/</div>
+                  <p class="contact-card-desc">Repositorio abierto de casos, sectores productivos y Comunidad de Práctica.</p>
                 </div>
                 <div class="contact-actions">
                   <a class="btn btn-accent" href="https://jsmiragregori.github.io/AI-STEAM-NETWORK/" target="_blank"
@@ -2765,16 +2955,10 @@
                     <i data-lucide="external-link" width="15" height="15"></i>
                     <span>Abrir web</span>
                   </a>
-                  <button type="button" class="btn btn-subtle"
-                    onclick="copyText('https://jsmiragregori.github.io/AI-STEAM-NETWORK/', 'fb-portal')">
-                    <i data-lucide="copy" width="14" height="14"></i>
-                    <span>Copiar</span>
-                  </button>
-                  <span class="copy-feedback" id="fb-portal" aria-live="polite"></span>
                 </div>
               </article>
 
-              <!-- Tarjeta 2: Web oficial AI-SECRETT -->
+              <!-- Tarjeta 2: Web oficial AiSECRETT -->
               <article class="contact-card">
                 <div style="display: grid; gap: var(--space-sm);">
                   <div class="contact-qr-row">
@@ -2788,21 +2972,13 @@
                     <div class="contact-qr-box" data-qr="https://aisecrett.eu" aria-label="Código QR de aisecrett.eu">
                     </div>
                   </div>
-                  <p class="contact-card-desc">Marco del proyecto europeo, formación académica (Track A) y consorcio de
-                    23 socios en 12 países.</p>
-                  <div class="contact-address" id="addr-official">https://aisecrett.eu</div>
+                  <p class="contact-card-desc">Marco europeo, formación superior y consorcio de 23 socios en 12 países.</p>
                 </div>
                 <div class="contact-actions">
                   <a class="btn btn-accent" href="https://aisecrett.eu" target="_blank" rel="noopener noreferrer">
                     <i data-lucide="external-link" width="15" height="15"></i>
                     <span>Abrir web</span>
                   </a>
-                  <button type="button" class="btn btn-subtle"
-                    onclick="copyText('https://aisecrett.eu', 'fb-official')">
-                    <i data-lucide="copy" width="14" height="14"></i>
-                    <span>Copiar</span>
-                  </button>
-                  <span class="copy-feedback" id="fb-official" aria-live="polite"></span>
                 </div>
               </article>
 
@@ -2820,23 +2996,27 @@
                     <div class="contact-qr-box" data-qr="mailto:aisteam_secrett@gva.es"
                       aria-label="Código QR de contacto aisteam_secrett@gva.es"></div>
                   </div>
-                  <p class="contact-card-desc">Canal directo para adhesiones, mentorías, propuestas de retos y
-                    coordinación institucional.</p>
-                  <div class="contact-address">aisteam_secrett@gva.es</div>
+                  <p class="contact-card-desc">Adhesiones, mentorías, propuestas de retos y coordinación institucional.</p>
                 </div>
                 <div class="contact-actions">
                   <a class="btn btn-accent" href="mailto:aisteam_secrett@gva.es">
                     <i data-lucide="send" width="15" height="15"></i>
                     <span>Escribir correo</span>
                   </a>
-                  <button type="button" class="btn btn-subtle" onclick="copyText('aisteam_secrett@gva.es', 'fb-mail')">
-                    <i data-lucide="copy" width="14" height="14"></i>
-                    <span>Copiar</span>
-                  </button>
-                  <span class="copy-feedback" id="fb-mail" aria-live="polite"></span>
                 </div>
               </article>
             </div>
+
+            <blockquote class="closing-finale-quote" id="closing-finale-quote">
+              <p class="closing-finale-text">«La Inteligencia Artificial multiplicará nuestra capacidad de cálculo, pero el sentido humano, el propósito y la voz siempre serán nuestros.»</p>
+              <div class="closing-finale-footer">
+                <span class="closing-finale-meta">De Ada Byron a Lara · <span style="text-transform: none;">AiSTEAM</span> Network</span>
+                <div class="closing-finale-sign">
+                  <span class="eyebrow" style="color: var(--on-surface);">Muchas gracias · María José Lozano Pérez</span>
+                  <img src="logo-aisecrett.png" alt="Logotipo oficial de AiSECRETT">
+                </div>
+              </div>
+            </blockquote>
           </div>
         </section>
       </div>
@@ -2877,7 +3057,7 @@
     // Scene 6 state: 0 = hidden, 1 = central hub, 2..5 = nodes 1..4
     let helixStep = 0;
 
-    // Scene 7 state: 0 = all closed, 1 = Servicios No Turísticos open
+    // Scene 7 state: 0 = all closed, 1 = CCIs open, 2 = CCIs + Servicios No Turísticos open
     let sectorStep = 0;
 
     // Scene 8 state: 0 = hidden, 1 = Mentorías + spokes, 2..5 = stages 1..4
@@ -2885,6 +3065,9 @@
 
     // Scene 9 state: 0 = story + voice wave, 1 = metrics count-up & resolved bridge
     let laraStep = 0;
+
+    // Scene 10 state: 0 = QR cards, 1 = closing finale quote
+    let closingStep = 0;
 
     // Canvas state for Scene 5 (3 elegant artist brushes + live auto-paint)
     const canvasStrokes = [];
@@ -2983,8 +3166,8 @@
         setHelixStep(helixStep + 1);
         return;
       }
-      if (currentScene === 6 && sectorStep < 1) {
-        setSectorStep(1);
+      if (currentScene === 6 && sectorStep < 2) {
+        setSectorStep(sectorStep + 1);
         return;
       }
       if (currentScene === 7 && copStep < 5) {
@@ -2993,6 +3176,10 @@
       }
       if (currentScene === 8 && laraStep < 1) {
         setLaraStep(1);
+        return;
+      }
+      if (currentScene === 9 && closingStep < 1) {
+        setClosingStep(1);
         return;
       }
       if (currentScene < totalScenes - 1) {
@@ -3023,7 +3210,7 @@
         return;
       }
       if (currentScene === 6 && sectorStep > 0) {
-        setSectorStep(0);
+        setSectorStep(sectorStep - 1);
         return;
       }
       if (currentScene === 7 && copStep > 0) {
@@ -3032,6 +3219,10 @@
       }
       if (currentScene === 8 && laraStep > 0) {
         setLaraStep(0);
+        return;
+      }
+      if (currentScene === 9 && closingStep > 0) {
+        setClosingStep(0);
         return;
       }
       if (currentScene > 0) {
@@ -3585,12 +3776,12 @@
       });
     }
 
-    // Scene 7: Sector cards toggle & 1-click arrow reveal for Servicios No Turísticos
+    // Scene 7: Sector cards toggle & 2-click arrow reveal (CCIs -> Servicios No Turísticos)
     function setSectorStep(step) {
       const cards = document.querySelectorAll('#sectors-grid .sector-card');
-      sectorStep = step ? 1 : 0;
+      sectorStep = Math.max(0, Math.min(2, step));
       cards.forEach((card, idx) => {
-        const isOpen = sectorStep === 1 && idx === cards.length - 1;
+        const isOpen = (sectorStep >= 1 && idx === 0) || (sectorStep >= 2 && idx === cards.length - 1);
         card.classList.toggle('is-open', isOpen);
         card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
@@ -3656,6 +3847,15 @@
         if (t < 1) requestAnimationFrame(animateCount);
       }
       requestAnimationFrame(animateCount);
+    }
+
+    // Scene 10: Closing finale quote reveal
+    function setClosingStep(step) {
+      closingStep = step ? 1 : 0;
+      const scene10 = document.getElementById('scene-10');
+      const quote = document.getElementById('closing-finale-quote');
+      if (scene10) scene10.classList.toggle('is-finale', closingStep === 1);
+      if (quote) quote.classList.toggle('is-revealed', closingStep === 1);
     }
 
     function openFullWindow(event, url) {
