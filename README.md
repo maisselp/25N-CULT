@@ -47,7 +47,7 @@ La pieza sigue un estilo editorial **`atelier`** combinado con la identidad ofic
 El proyecto es **autocontenido** en un único archivo HTML, sin dependencias de compilación ni servidores obligatorios:
 
 1. Clona o descarga este repositorio.
-2. Abre el archivo [Mujeres,_IA,_STEAM_y_competencias_STEAM_·_AI-STEAM_Network (3).html](./Mujeres%2C_IA%2C_STEAM_y_competencias_STEAM_%C2%B7_AI-STEAM_Network%20(3).html) directamente en cualquier navegador moderno (Chrome, Edge, Firefox o Safari).
+2. Abre el archivo [index.html](./index.html) directamente en cualquier navegador moderno (Chrome, Edge, Firefox o Safari).
    - *Nota*: Requiere conexión a internet en el momento de abrirla para cargar las tipografías de Google Fonts y los iconos de `lucide` desde CDN.
 3. Pulsa `F11` (o modo pantalla completa del navegador) para proyectar en la ponencia.
 
@@ -70,5 +70,5 @@ El proyecto es **autocontenido** en un único archivo HTML, sin dependencias de 
 .
 ├── AGENTS.md                                                                 # Instrucciones y tokens protegidos para agentes IA
 ├── README.md                                                                 # Documentación del proyecto
-└── Mujeres,_IA,_STEAM_y_competencias_STEAM_·_AI-STEAM_Network (3).html       # Presentación HTML autocontenida
+└── index.html                                                                # Presentación HTML autocontenida
 ```

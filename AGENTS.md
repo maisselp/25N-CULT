@@ -6,7 +6,8 @@ Guía de instrucciones para agentes de IA que trabajen en este repositorio.
 
 Este repositorio contiene una presentación web interactiva en un único archivo HTML autocontenido pensada para su uso en una ponencia en directo:
 
-- Archivo principal: `Mujeres,_IA,_STEAM_y_competencias_STEAM_·_AI-STEAM_Network (3).html`
+- Archivo principal: `index.html`
+- Repositorio remoto (`origin`): `https://github.com/maisselp/25N-CULT.git`
 - Título: *Mujeres, IA, STEAM y competencias STEAM · AI-STEAM Network*
 - Formato: Presentación narrativa con **desplazamiento horizontal por escenas** (10 escenas en total mediante `.scenes-track` con `translateX`) y un hilo continuo de telar Jacquard (`.continuous-thread-svg`) sincronizado con el avance.
 - Stack: HTML5 + CSS (variables en `:root`) + JavaScript Vanilla + Google Fonts (`Instrument Sans`, `Instrument Serif`, `IBM Plex Mono`) + iconos `lucide@1.43.0` vía CDN. Sin paso de compilación (*build*).
