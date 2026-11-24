@@ -343,6 +343,73 @@
       opacity: 1;
     }
 
+    /* Organic, restrained staggered entrance for scene elements */
+    .scene .scene-inner > *:not(.ada-quote-block):not(.closing-finale-quote) {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 680ms var(--ease-out), transform 680ms var(--ease-out);
+    }
+
+    .scene.is-active .scene-inner > *:not(.ada-quote-block):not(.closing-finale-quote) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scene.is-active .scene-inner > *:nth-child(1):not(.ada-quote-block):not(.closing-finale-quote) { transition-delay: 160ms; }
+    .scene.is-active .scene-inner > *:nth-child(2):not(.ada-quote-block):not(.closing-finale-quote) { transition-delay: 270ms; }
+    .scene.is-active .scene-inner > *:nth-child(3):not(.ada-quote-block):not(.closing-finale-quote) { transition-delay: 380ms; }
+    .scene.is-active .scene-inner > *:nth-child(4):not(.ada-quote-block):not(.closing-finale-quote) { transition-delay: 480ms; }
+
+    /* Subtle organic card & hub bloom on scene entry */
+    .scene:not(.is-active) .letter-tile:not(.is-art),
+    .scene:not(.is-active) .helix-node-card,
+    .scene:not(.is-active) .helix-core-hub,
+    .scene:not(.is-active) .sector-card,
+    .scene:not(.is-active) .cop-node-card,
+    .scene:not(.is-active) .cop-core-mentoring {
+      opacity: 0;
+      transform: translateY(20px) scale(0.965);
+    }
+
+    .scene.is-active .helix-core-hub,
+    .scene.is-active .cop-core-mentoring {
+      transition: opacity 680ms var(--ease-out) 190ms, transform 680ms var(--ease-out) 190ms;
+    }
+
+    .scene.is-active .helix-node-card,
+    .scene.is-active .cop-node-card,
+    .scene.is-active .sector-card {
+      transition: opacity 680ms var(--ease-out), transform 680ms var(--ease-out), border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    .scene.is-active .letter-tile:not(.is-art):nth-child(1) { transition-delay: 200ms; }
+    .scene.is-active .letter-tile:not(.is-art):nth-child(2) { transition-delay: 280ms; }
+    .scene.is-active .letter-tile:not(.is-art):nth-child(3) { transition-delay: 360ms; }
+    .scene.is-active .letter-tile:not(.is-art):nth-child(5) { transition-delay: 440ms; }
+
+    .scene.is-active .helix-node-card:nth-of-type(1),
+    .scene.is-active .cop-node-card:nth-of-type(1) { transition-delay: 260ms; }
+    .scene.is-active .helix-node-card:nth-of-type(2),
+    .scene.is-active .cop-node-card:nth-of-type(2) { transition-delay: 350ms; }
+    .scene.is-active .helix-node-card:nth-of-type(3),
+    .scene.is-active .cop-node-card:nth-of-type(3) { transition-delay: 440ms; }
+    .scene.is-active .helix-node-card:nth-of-type(4),
+    .scene.is-active .cop-node-card:nth-of-type(4) { transition-delay: 530ms; }
+
+    .scene.is-active .sector-card:nth-child(1) { transition-delay: 200ms; }
+    .scene.is-active .sector-card:nth-child(2) { transition-delay: 260ms; }
+    .scene.is-active .sector-card:nth-child(3) { transition-delay: 320ms; }
+    .scene.is-active .sector-card:nth-child(4) { transition-delay: 380ms; }
+    .scene.is-active .sector-card:nth-child(5) { transition-delay: 440ms; }
+    .scene.is-active .sector-card:nth-child(6) { transition-delay: 500ms; }
+    .scene.is-active .sector-card:nth-child(7) { transition-delay: 560ms; }
+
+    .scene.is-active .sector-card:hover,
+    .scene.is-active .helix-node-card:hover,
+    .scene.is-active .cop-node-card:hover {
+      transition-delay: 0ms;
+    }
+
     .scene-inner {
       width: 100%;
       max-width: 1180px;
